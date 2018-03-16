@@ -1,14 +1,15 @@
 page-item-detail {
-  .item-profile {
-    width: 100%;
-    background-position: center center;
-    background-size: cover;
-    height: 250px;
-  }
-
-  .item-detail {
-    width: 100%;
-    background: white;
-    position: absolute;
-  }
+    .item-profile {
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+    }
+    .item-detail {
+        width: 100%;
+        background: white;
+    }
+    .item-banner {
+        height: 100%;
+        width: 100%
+    }
 }

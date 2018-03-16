@@ -12,8 +12,8 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-$text-color:        #000;
-$background-color:  #fff;
+$text-color:        #32292f;
+$background-color:  #f0f7f4;
 
 
 // Named Color Variables
@@ -25,33 +25,41 @@ $background-color:  #fff;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #705d56,
+  secondary:  #70abaf,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #99e1d9,
+  dark:       #32292f,
+
+  title_text: #99e1d9,
+  title_bg:   #32292f,
+  tab_text:	  #f0f7f4,
+  tab_bg: 	  #32292f,
+  tab_active: #99e1d9
 );
 
 
-// App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
+
 
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
-// Material Design only Sass variables can go here
 
+// Title of the pages
 
+$toolbar-md-title-text-color: map-get($colors, title_text);
+$toolbar-background: map-get($colors, title_bg);
 
+// Tabs UI colors
 
-// App Windows Variables
-// --------------------------------------------------
-// Windows only Sass variables can go here
-
-
+$tabs-background: map-get($colors, tab_bg);
+$tabs-md-background: map-get($colors, tab_bg);
+$tabs-md-tab-icon-color: map-get($colors, tab_text);
+$tabs-md-tab-color-active: map-get($colors, tab_active);
+$tabs-md-tab-icon-color-active: map-get($colors, tab_active);
+$tabs-md-tab-text-color: map-get($colors, tab_text);
 
 
 // App Theme

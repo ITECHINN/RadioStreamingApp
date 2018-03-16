@@ -1,0 +1,57 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{ 'ABOUT_TITLE' | translate }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
+    <ion-list>
+        <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+      <ion-avatar item-start>
+        <img [src]="item.logoPic" />
+      </ion-avatar>
+      <h2>{{item.station}}</h2>
+      <p>{{item.about}}</p>
+      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+    </button>
+    </ion-list>
+</ion-content>
+
+<ion-content> -->
+
+
+
+<!-- <div class="item-detail" padding>
+    <h2>{{item.station}}</h2>
+    <p>{{item.about}}</p>
+</div> -->
+
+<ion-content>
+
+    <div class="item-profile" text-bottom>
+        <img class="about-bg-img" src="assets/img/about_img.png" />
+    </div>
+
+    <ion-card>
+        <div padding>
+            <h1 class="about-header">StriimiRadio</h1>
+            <br>
+            <p>{{ 'ABOUT_TEXT1' | translate }}</p>
+            <br>
+            <p>{{ 'ABOUT_VERSION' | translate }}</p>
+            <p>{{ 'ABOUT_AUTHOR' | translate }}</p>
+            <p>{{ 'ABOUT_EMAIL' | translate }} <a href="mailto:striimiradio@gmail.com?subject=StriimiRadio-App">striimiradio@gmail.com</a></p>
+            <br>
+            <h2 class="about-sub-header">{{ 'ABOUT_CREDITS' | translate }}</h2>
+            <br>
+            <p>Logo font by Typodermic Fonts</p>
+            <p><a href="https://www.fontspring.com/lic/ecy0nxh8uh">Font License</a></p>
+            <p>Art logo and banner created by the author of this app.</p>
+
+        </div>
+    </ion-card>
+</ion-content>

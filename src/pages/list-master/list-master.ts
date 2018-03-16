@@ -13,13 +13,19 @@ export class ListMasterPage {
   currentItems: Item[];
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
-    this.currentItems = this.items.query();
   }
 
   /**
    * The view loaded, let's query our items for the list
    */
   ionViewDidLoad() {
+    this.currentItems = this.items.query();
+    // Sorting, convert station names to lower case first, since sorting keeps it in account.
+    this.currentItems.sort( (i, j) => {
+      if (i.station.toLowerCase() < j.station.toLowerCase()) return -1;
+      if (i.station.toLowerCase() > j.station.toLowerCase()) return 1;
+      return 0;
+    })
   }
 
   /**

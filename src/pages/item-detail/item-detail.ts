@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-import { AlertController } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, NavParams } from 'ionic-angular';
 
 import { Media, MediaObject } from '@ionic-native/media';
 import { FilePath } from '@ionic-native/file-path';
 import { MusicControls } from '@ionic-native/music-controls';
-import { BackgroundMode } from '@ionic-native/background-mode';
 
 import { Items } from '../../providers/providers';
 import { Platform } from 'ionic-angular';
@@ -20,23 +17,22 @@ export class ItemDetailPage {
 
   item: any;
   imgPath: any;
-
   radiostream: MediaObject;
   audioIsPlaying: boolean;
   audioIsLoaded: boolean;
+  loading: any;
   
   constructor(
-    public navCtrl: NavController, 
-    navParams: NavParams, 
-    items: Items, 
-    private alertCtrl: AlertController, 
-    platform: Platform, 
+    public navCtrl: NavController,
     private media: Media, 
     private musicControls: MusicControls, 
-    private filePath: FilePath, 
-    private backgroundMode: BackgroundMode
-  ) {
-
+    private filePath: FilePath,
+    public loadingCtrl: LoadingController,
+    navParams: NavParams, 
+    items: Items, 
+    platform: Platform
+  )
+  {
       this.item = navParams.get('item') || items.defaultItem;
 
       platform.ready().then(() => {
@@ -45,12 +41,11 @@ export class ItemDetailPage {
         console.log("Platform is ready!");
   
         this.radiostream = this.media.create(this.item.streamURL);
+        
 
-        console.log("IMPLEMENT ERROR HANDLING WHEN NETWORK IS NOT AVAILABLE");
-  
+        console.log("IMPLEMENT ERROR HANDLING WHEN NETWORK IS NOT AVAILABLE  (IN THE PLAY FUNCTION????)");
 
 
-        // Listen to plugin events:
 
 
         this.radiostream.onError.subscribe(error => {
@@ -62,9 +57,15 @@ export class ItemDetailPage {
         // })
 
         // MusicControls requires the absolute path to the cover image. Resolved with the FilePath plugin.
-        this.imgPath = this.filePath.resolveNativePath('assets/img/music_control_img.png')
-          .then(filePath => console.log(filePath))
-          .catch(err => console.log(err));
+        this.filePath.resolveNativePath('assets/img/music_control_img.png')
+          .then(filePath => {
+            this.imgPath = filePath;
+            console.log(filePath)
+          })
+          .catch(err => {
+            console.log(filePath);
+            console.log(err)
+          });
 
         this.musicControls.subscribe().subscribe(event => {
           const action = JSON.parse(event).message;
@@ -80,16 +81,24 @@ export class ItemDetailPage {
               this.stopAudioStream();
               break;
             default:
+              this.stopAudioStream();
               break;
           }   
         })
-      
+        // Listen to the Music Control plugin events:
         this.musicControls.listen();
-
-        //this.radiostream.setVolume
-        
       });
+  }
 
+  presentLoadingIndicator() {
+    this.loading = this.loadingCtrl.create({
+      spinner: 'crescent'
+    });
+    this.loading.present();
+  }
+
+  dismissLoadingIndicator() {
+    this.loading.dismiss();
   }
 
   ionViewDidLeave() {
@@ -97,27 +106,46 @@ export class ItemDetailPage {
   }
 
   playAudioStream() {
-  	this.radiostream.play();
-    this.audioIsLoaded = true;
+    // If audio has not been loaded yet, show a loading indicator.
+    if (!this.audioIsLoaded) {
+      this.presentLoadingIndicator();
+    }
+    this.radiostream.play();
     this.audioIsPlaying = true;
     this.musicControls.create({
       track       : 'StriimiRadio',
       artist      : this.item.station,
       cover       : this.imgPath,
-      dismissable : true,
+      dismissable : false,
       hasPrev     : false,
       hasNext     : false,
-      hasClose    : true,
-      ticker      : this.item.station
+      hasClose    : true
     })
     this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    // When object's status is finished loading, dismiss the loading indicator.
+    this.radiostream.onStatusUpdate.subscribe(status => {
+      console.log("RadioStream status update: " + status);
+      /* MediaObject --> onStatusUpdate: 
+      (1) = loading
+      (2) = playing
+      (3) = paused 
+      (4) = stopped / released
+     */
+      if (status == 2 && !this.audioIsLoaded) {
+        this.audioIsLoaded = true;
+        this.dismissLoadingIndicator();
+      }
+    });
   }
 
   pauseAudioStream() {
-  	this.radiostream.pause();
-    this.audioIsLoaded = true;
-    this.audioIsPlaying = false;
-    this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    // Do not pause the stream if audio is NOT playing (results in error)
+    if (this.audioIsPlaying) {
+      this.radiostream.pause();
+      this.audioIsLoaded = true;
+      this.audioIsPlaying = false;
+      this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    }
   }
 
   stopAudioStream() {
@@ -128,10 +156,11 @@ export class ItemDetailPage {
         OpenCore instances for media playback. Applications should call the release function 
         for any Media resource that is no longer needed.
       */
-      this.radiostream.release();
+      this.radiostream.release();      
       this.audioIsLoaded = false;
       this.audioIsPlaying = false;
       this.musicControls.updateIsPlaying(this.audioIsPlaying);
+      this.musicControls.destroy();
     }
   }
  

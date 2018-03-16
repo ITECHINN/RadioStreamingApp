@@ -61,6 +61,15 @@ $tabs-md-tab-color-active: map-get($colors, tab_active);
 $tabs-md-tab-icon-color-active: map-get($colors, tab_active);
 $tabs-md-tab-text-color: map-get($colors, tab_text);
 
+// Loading indicator
+
+$loading-md-background: transparent;
+$loading-md-spinner-crescent-color: #32292f;
+$loading-md-box-shadow: transparent;
+
+
+
+
 
 // App Theme
 // --------------------------------------------------

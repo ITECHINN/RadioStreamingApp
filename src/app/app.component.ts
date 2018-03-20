@@ -11,14 +11,15 @@ import { Settings } from '../providers/providers';
   template: `<ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Pages</ion-title>
+        <ion-title>{{ "MENU_MENU" | translate }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-list>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
+          <span id="set-left">{{ p.translation | translate }}</span>
+          <span id="set-right"><ion-icon style="float: right" name="{{p.icon}}"></ion-icon></span>
         </button>
       </ion-list>
     </ion-content>
@@ -32,14 +33,12 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Tabs', component: 'TabsPage' },
-    { title: 'Cards', component: 'CardsPage' },
-    { title: 'Content', component: 'ContentPage' },
-    { title: 'Master Detail', component: 'ListMasterPage' },
-    { title: 'Menu', component: 'MenuPage' },
-    { title: 'Settings', component: 'SettingsPage' },
-    { title: 'Search', component: 'SearchPage' },
-    { title: 'About', component: 'AboutPage' } 
+    { title: 'Portal', component: 'TabsPage', translation: 'MENU_HOME', icon: 'musical-notes' },
+    { title: 'Radio Stations', component: 'ListMasterPage', translation: 'MENU_STATIONS', icon: 'radio' },
+    { title: 'Search', component: 'SearchPage', translation: 'MENU_SEARCH', icon: 'search' },
+    { title: 'Options', component: 'SettingsPage', translation: 'MENU_OPTIONS', icon: 'options' },
+    { title: 'Help & Support', component: 'HelpSupportPage', translation: 'MENU_HELP_SUPPORT', icon: 'help-circle' } ,
+    { title: 'About', component: 'AboutPage', translation: 'MENU_ABOUT', icon: 'information-circle' } 
   ]
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

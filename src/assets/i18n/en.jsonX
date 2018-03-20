@@ -1,0 +1,41 @@
+{
+    "ABOUT_TITLE": "About",
+    "ABOUT_VERSION": "Version:",
+    "ABOUT_AUTHOR": "App created by:",
+    "ABOUT_TEXT1": "Listen to Finnish radio stations!",
+    "ABOUT_TEXT2": "This app does not collect any personal data, but provides merely an interface to quickly access and listen to internet radio streams.",
+    "ABOUT_TEXT3": "Logo font by Typodermic Fonts",
+    "ABOUT_TEXT4": "Logo and banner art created by the author of this app.",
+    "ABOUT_TEXT5": "Translations by:",
+    "ABOUT_EMAIL": "E-mail:",
+    "ABOUT_CREDITS": "Credits:",
+    "ABOUT_INFO": "Info:",
+    "ABOUT_FONT_LICENSE": "Font license",
+    "ABOUT_TECHNOLOGIES": "Created with:",
+
+    "ABOUT_LOC1_CONTRIB": "",
+    "ABOUT_LOC1_LANGUAGE": "(English)",
+
+    "MENU_HOME": "Portal",
+    "MENU_MENU": "Menu",
+    "MENU_STATIONS": "Radio Stations",
+    "MENU_OPTIONS": "Options",
+    "MENU_SEARCH": "Search",
+    "MENU_ABOUT": "About",
+
+    "LIST_MASTER_TITLE": "Radio Stations",
+
+    "PLAY_BUFFERING": "Buffering...",
+
+    "SEARCH_TITLE": "Search",
+    "SEARCH_PLACEHOLDER": "Search radio stations...",
+
+    "OPTIONS_TITLE": "Options",
+
+    "TAB1_TITLE": "Radio Stations",
+    "TAB2_TITLE": "Search",
+    "TAB3_TITLE": "Options",
+
+
+    "BACK_BUTTON_TEXT": "Back"
+}

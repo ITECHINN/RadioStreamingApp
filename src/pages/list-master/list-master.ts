@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController, NavController } from 'ionic-angular';
+
+import { IonicPage, NavController } from 'ionic-angular';
+
+import { Storage } from '@ionic/storage';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
@@ -10,17 +13,37 @@ import { Items } from '../../providers/providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems: Item[];
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
+  currentItems: Item[];
+  favoriteMarkedItem: Item;
+
+  constructor(public navCtrl: NavController, public items: Items, private savedData: Storage) {
   }
 
   /**
    * The view loaded, let's query our items for the list
    */
   ionViewDidLoad() {
+
+    // Get the list of radio station items
     this.currentItems = this.items.query();
-    // Sorting, convert station names to lower case first, since sorting keeps it in account.
+
+    // Go through our station list and assign icons.
+    this.currentItems.forEach(item => {
+      this.getFavorite().
+        then(favorite => {
+          if (item.station == favorite) {
+            item.isFavorite = true;
+            // Store the item object as favorite for easy access.
+            this.favoriteMarkedItem = item;
+          }
+          else {
+            item.isFavorite = false;
+          }
+        })
+    })
+
+    // Sorting: convert station names to lower case first, since sorting keeps it in account.
     this.currentItems.sort( (i, j) => {
       if (i.station.toLowerCase() < j.station.toLowerCase()) return -1;
       if (i.station.toLowerCase() > j.station.toLowerCase()) return 1;
@@ -29,24 +52,35 @@ export class ListMasterPage {
   }
 
   /**
-   * Prompt the user to add a new item. This shows our ItemCreatePage in a
-   * modal and then adds the new item to our data source if the user created one.
+   * Set item as favorite and store it
    */
-  addItem() {
-    let addModal = this.modalCtrl.create('ItemCreatePage');
-    addModal.onDidDismiss(item => {
-      if (item) {
-        this.items.add(item);
-      }
+  setFavorite(item) {
+    // If favoriteMarkedItem exists (and is not e.g. 'undefined')
+    if (this.favoriteMarkedItem) {
+      // Reset the icon of the previously marked favorite
+      this.favoriteMarkedItem.isFavorite = false;
+    }
+      // Overwrite the favorite item
+    this.favoriteMarkedItem = item;
+    // Empty the previous favorite data, we only store ONE favorite station
+    this.savedData.clear().
+    then( () => {
+      // Save the favorite
+      this.savedData.set('savedAsFavorite', item.station);
+      item.isFavorite = true;
     })
-    addModal.present();
+
+    
   }
 
   /**
-   * Delete an item from the list of items.
+   * Get the favorite item from storage (only one!)
    */
-  deleteItem(item) {
-    this.items.delete(item);
+  getFavorite() {
+    return this.savedData.get('savedAsFavorite')
+      .then(fav => {
+        return fav;
+      })
   }
 
   /**

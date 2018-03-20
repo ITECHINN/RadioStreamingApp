@@ -1,27 +1,25 @@
 <ion-header>
-
     <ion-navbar>
         <ion-title>{{ item.station }}</ion-title>
     </ion-navbar>
-
 </ion-header>
 
 
 <ion-content>
-    <!-- <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.bannerPic + ')'">
-    </div> -->
 
-    <div class="item-profile" text-bottom>
-        <img class="item-banner" src={{item.bannerPic}} />
+    <div align="center">
+        <ion-navbar>
+            <img class="item-banner" src={{item.bannerPic}} />
+            <button class="media-control-buttons" mode="ios" outline="true" strong="true" ion-button (click)="changeAudioStreamAction()">
+                <ion-icon name={{buttonIconName}}></ion-icon>
+            </button>
+        </ion-navbar>
     </div>
 
-    <div class="item-detail" padding>
-        <h2>{{item.station}}</h2>
-        <p>{{item.about}}</p>
-    </div>
 
     <ion-card>
         <div padding>
+            <p>{{item.about}}</p>
             <p>Some more text here</p>
             <p>Some more text here</p>
             <p>Some more text here</p>
@@ -37,13 +35,5 @@
         </div>
     </ion-card>
 
-    <div padding>
-        <button ion-button (click)="playAudioStream()">
-            <ion-icon name="play"></ion-icon>
-        </button>
-        <button ion-button (click)="pauseAudioStream()">
-            <ion-icon name="pause"></ion-icon>
-        </button>
-    </div>
 
 </ion-content>

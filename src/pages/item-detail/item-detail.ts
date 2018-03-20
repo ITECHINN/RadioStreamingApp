@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, NavParams, AlertController } from 'ionic-angular';
 
 import { Media, MediaObject } from '@ionic-native/media';
 import { FilePath } from '@ionic-native/file-path';
 import { MusicControls } from '@ionic-native/music-controls';
+
+import { TranslateService } from '@ngx-translate/core';
 
 import { Items } from '../../providers/providers';
 import { Platform } from 'ionic-angular';
@@ -21,6 +23,11 @@ export class ItemDetailPage {
   audioIsPlaying: boolean;
   audioIsLoaded: boolean;
   loading: any;
+  buttonIconName: any;
+
+  alertTitle: string;
+  alertSubTitle: string;
+  alertMessage: string;
   
   constructor(
     public navCtrl: NavController,
@@ -28,33 +35,42 @@ export class ItemDetailPage {
     private musicControls: MusicControls, 
     private filePath: FilePath,
     public loadingCtrl: LoadingController,
+    private alertCtrl: AlertController,
+    private translateService: TranslateService,
     navParams: NavParams, 
     items: Items, 
     platform: Platform
   )
   {
       this.item = navParams.get('item') || items.defaultItem;
+      // On start-up the play icon may be shown.
+      this.buttonIconName = "play";
+
+
+      // Prepare the translations for connection alert
+      this.translateService.get('ALERT_CONNECTION_TITLE').subscribe(
+        translatedString => {
+          this.alertTitle = translatedString;
+        }
+      )
+      this.translateService.get('ALERT_CONNECTION_SUBTITLE').subscribe(
+        translatedString => {
+          this.alertSubTitle = translatedString;
+        }
+      )
+      this.translateService.get('ALERT_CONNECTION_MESSAGE').subscribe(
+        translatedString => {
+          this.alertMessage = translatedString;
+        }
+      )
 
       platform.ready().then(() => {
+
         // Okay, so the platform is ready and our plugins are available.
           // Here you can do any higher level native things you might need.
         console.log("Platform is ready!");
   
-        this.radiostream = this.media.create(this.item.streamURL);
-        
-
-        console.log("IMPLEMENT ERROR HANDLING WHEN NETWORK IS NOT AVAILABLE  (IN THE PLAY FUNCTION????)");
-
-
-
-
-        this.radiostream.onError.subscribe(error => {
-          alert("ERROR: " + error);
-        })
-
-        // this.radiostream.onSuccess.subscribe( () => {
-        //   alert("SUCCESS!");
-        // })
+        this.radiostream = this.media.create(this.item.streamURL);       
 
         // MusicControls requires the absolute path to the cover image. Resolved with the FilePath plugin.
         this.filePath.resolveNativePath('assets/img/music_control_img.png')
@@ -90,6 +106,16 @@ export class ItemDetailPage {
       });
   }
 
+  presentAlert() {
+
+    let alert = this.alertCtrl.create({
+      title: this.alertTitle,
+      subTitle: this.alertSubTitle,
+      message : this.alertMessage,
+      enableBackdropDismiss: true
+    })
+    alert.present();
+  }
   presentLoadingIndicator() {
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent'
@@ -110,6 +136,13 @@ export class ItemDetailPage {
     if (!this.audioIsLoaded) {
       this.presentLoadingIndicator();
     }
+
+    this.radiostream.onError.subscribe(error => {
+      this.dismissLoadingIndicator();
+      this.presentAlert();
+      this.buttonIconName = "play";
+    })
+
     this.radiostream.play();
     this.audioIsPlaying = true;
     this.musicControls.create({
@@ -145,6 +178,19 @@ export class ItemDetailPage {
       this.audioIsLoaded = true;
       this.audioIsPlaying = false;
       this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    }
+  }
+
+  changeAudioStreamAction() {
+    if (this.buttonIconName == "play") {
+        // Change the icon of the media button
+        this.buttonIconName = "pause";
+        this.playAudioStream();
+    }
+    else {
+      // Change the icon of the media button
+      this.buttonIconName = "play";
+      this.pauseAudioStream();
     }
   }
 

@@ -29,7 +29,7 @@ export class SettingsPage {
   };
 
   page: string = 'main';
-  pageTitleKey: string = 'SETTINGS_TITLE';
+  pageTitleKey: string = 'OPTIONS_TITLE';
   pageTitle: string;
 
   subSettings: any = SettingsPage;

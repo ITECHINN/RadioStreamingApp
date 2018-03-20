@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { LaunchReview } from '@ionic-native/launch-review';
+
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 
@@ -11,6 +13,12 @@ import { Items } from '../../providers/providers';
 })
 export class HelpSupportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private launchReview: LaunchReview) { }
 
+  openReviewPage() {
+    this.launchReview.launch()
+      .then( () => console.log('Launch of the store app successful!'));
+  }
+  
 }
+

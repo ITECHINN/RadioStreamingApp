@@ -13,6 +13,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { MusicControls } from '@ionic-native/music-controls';
 import { FilePath } from '@ionic-native/file-path';
 import { BackgroundMode } from '@ionic-native/background-mode';
+import { LaunchReview } from '@ionic-native/launch-review';
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
@@ -67,6 +68,7 @@ export function provideSettings(storage: Storage) {
     FilePath,
     Items,
     BackgroundMode,
+    LaunchReview,
     Media,
     MusicControls,
     User,

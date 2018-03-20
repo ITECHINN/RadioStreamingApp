@@ -18,65 +18,23 @@
             <h2 class="about-sub-header">{{ 'HELP_SUPPORT_HELP' | translate }}</h2>
             <br>
             <p>{{ 'HELP_SUPPORT_TEXT1' | translate }}</p>
-            <p>
-                <ion-icon class="about-tech-icon" name="radio"></ion-icon>
-            </p>
+            <br>
+            <img class="help-image" src="assets/img/Help_Favorite.jpg" border="1px" />
+
         </div>
     </ion-card>
-
+    <br/>
     <ion-card>
         <div padding>
-            <br>
             <h2 class="about-sub-header">{{ 'HELP_SUPPORT_SUPPORT' | translate }}</h2>
             <br>
             <p>{{ 'HELP_SUPPORT_TEXT2' | translate }}</p>
-            <br>
+            <button class="support-button" mode="ios" outline="true" ion-button>{{ 'BUTTON_SUPPORT_CONTACT' | translate }}</button>
+        </div>
+        <div padding>
+            <p>{{ 'HELP_SUPPORT_TEXT3' | translate }}</p>
+            <button class="support-button" mode="ios" outline="true" ion-button (click)="openReviewPage()">{{ 'BUTTON_SUPPORT_FEEDBACK' | translate }}</button>
         </div>
     </ion-card>
-    <!-- 
-    <h1 class="about-header">StriimiRadio</h1>
-    <br>
-    <p>{{ 'ABOUT_TEXT1' | translate }}</p>
-    <p>
-        <ion-icon class="about-tech-icon" name="radio"></ion-icon>
-    </p>
-    <br>
-    <p>{{ 'ABOUT_VERSION' | translate }} v.0.0.2</p>
-    <p>{{ 'ABOUT_AUTHOR' | translate }} Frederik Vermaete</p>
-    <p>{{ 'ABOUT_EMAIL' | translate }} <a href="mailto:striimiradio@gmail.com?subject=StriimiRadio-App">striimiradio@gmail.com</a></p>
-    <br>
-    <p>____________________</p>
-    <br>
-    <h2 class="about-sub-header">{{ 'ABOUT_INFO' | translate }}</h2>
-    <br>
 
-    <br>
-    <h2 class="about-sub-header">{{ 'ABOUT_CREDITS' | translate }}</h2>
-    <br>
-    <p>{{ 'ABOUT_TEXT3' | translate }}</p>
-    <p><a href="https://www.fontspring.com/lic/ecy0nxh8uh">{{ 'ABOUT_FONT_LICENSE'| translate }}</a></p>
-    <p>{{ 'ABOUT_TEXT4' | translate }}</p>
-    <br>
-    <p>{{ 'ABOUT_TEXT5' | translate }}</p>
-    <p>{{ 'ABOUT_LOC1_CONTRIB' | translate }} {{'ABOUT_LOC1_LANGUAGE' | translate }}</p>
-    <br>
-    <p>____________________</p>
-    <br>
-    <h2 class="about-sub-header">{{ 'ABOUT_TECHNOLOGIES' | translate }}</h2>
-    <br>
-    <p>
-        <ion-icon class="about-tech-icon" name="ionic"></ion-icon>
-        <ion-icon class="about-tech-icon" name="logo-nodejs"></ion-icon>
-        <ion-icon class="about-tech-icon" name="logo-angular"></ion-icon>
-        <ion-icon class="about-tech-icon" name="logo-javascript"></ion-icon>
-        <ion-icon class="about-tech-icon" name="logo-css3"></ion-icon>
-    </p>
-
-
-
-
-
-
-    </div>
-    </ion-card> -->
 </ion-content>

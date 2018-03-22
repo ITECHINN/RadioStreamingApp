@@ -3,12 +3,14 @@ import { IonicPage, NavController, LoadingController, NavParams, AlertController
 
 import { Media, MediaObject } from '@ionic-native/media';
 import { FilePath } from '@ionic-native/file-path';
+
 import { MusicControls } from '@ionic-native/music-controls';
 
 import { TranslateService } from '@ngx-translate/core';
 
 import { Items } from '../../providers/providers';
 import { Platform } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -18,25 +20,26 @@ import { Platform } from 'ionic-angular';
 export class ItemDetailPage {
 
   item: any;
-  imgPath: any;
+  imgNativePath: any;
   radiostream: MediaObject;
   audioIsPlaying: boolean;
   audioIsLoaded: boolean;
   loading: any;
   buttonIconName: any;
-
   alertTitle: string;
   alertSubTitle: string;
   alertMessage: string;
-  
+
+
+
   constructor(
     public navCtrl: NavController,
     private media: Media, 
     private musicControls: MusicControls, 
-    private filePath: FilePath,
     public loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private translateService: TranslateService,
+    private filePath: FilePath,
     navParams: NavParams, 
     items: Items, 
     platform: Platform
@@ -73,15 +76,14 @@ export class ItemDetailPage {
         this.radiostream = this.media.create(this.item.streamURL);       
 
         // MusicControls requires the absolute path to the cover image. Resolved with the FilePath plugin.
-        this.filePath.resolveNativePath('assets/img/music_control_img.png')
-          .then(filePath => {
-            this.imgPath = filePath;
-            console.log(filePath)
-          })
-          .catch(err => {
-            console.log(filePath);
-            console.log(err)
-          });
+
+        this.filePath.resolveNativePath('assets/img/icon.png')
+          .then((path) => {
+            this.imgNativePath = path;
+            alert(this.imgNativePath);
+        })
+          .catch(err => alert(err));
+
 
         this.musicControls.subscribe().subscribe(event => {
           const action = JSON.parse(event).message;
@@ -148,7 +150,7 @@ export class ItemDetailPage {
     this.musicControls.create({
       track       : 'StriimiRadio',
       artist      : this.item.station,
-      cover       : this.imgPath,
+      cover       : this.imgNativePath,
       dismissable : false,
       hasPrev     : false,
       hasNext     : false,
@@ -209,7 +211,35 @@ export class ItemDetailPage {
       this.musicControls.destroy();
     }
   }
- 
+
+
+  getLocalisedLanguage(item) {
+
+    var localisedLanguage: string;
+
+    if (item.language == 'ENG') {
+      this.translateService.get('DETAILS_STATION_LANG_ENG').subscribe(
+        translatedString => { localisedLanguage = translatedString });
+    }
+    if (item.language == 'FIN') {
+      this.translateService.get('DETAILS_STATION_LANG_FIN').subscribe(
+        translatedString => { localisedLanguage = translatedString });         
+    }
+    if (item.language == 'SWE') {
+      this.translateService.get('DETAILS_STATION_LANG_SWE').subscribe(
+        translatedString => { localisedLanguage = translatedString });
+    }
+    if (item.language == 'RUS') {
+      this.translateService.get('DETAILS_STATION_LANG_RUS').subscribe(
+        translatedString => { localisedLanguage = translatedString });
+    }
+    if (item.language == 'EST') {
+      this.translateService.get('DETAILS_STATION_LANG_EST').subscribe(
+        translatedString => { localisedLanguage = translatedString });
+    }
+
+    return localisedLanguage;
+  }
 
 }
 

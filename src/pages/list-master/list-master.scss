@@ -7,6 +7,11 @@ page-list-master {
     }
     #button-favorite-station {
         background-color: #99e1d9;
+        border: none;
+        border-radius: 5px;
+    }
+    #button-favorite-station:hover {
+        background-color: #f0f7f4;
     }
     #favorite-h2 {
         color: #32292f;

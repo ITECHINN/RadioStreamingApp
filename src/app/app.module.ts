@@ -11,7 +11,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 // Documentation: https://ionicframework.com/docs/native/media/
 import { Media, MediaObject } from '@ionic-native/media';
 import { MusicControls } from '@ionic-native/music-controls';
-import { FilePath } from '@ionic-native/file-path';
+
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LaunchReview } from '@ionic-native/launch-review';
 
@@ -65,7 +65,6 @@ export function provideSettings(storage: Storage) {
   ],
   providers: [
     Api,
-    FilePath,
     Items,
     BackgroundMode,
     LaunchReview,

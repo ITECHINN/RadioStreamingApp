@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, LoadingController, NavParams, AlertController } from 'ionic-angular';
 
 import { Media, MediaObject } from '@ionic-native/media';
-import { FilePath } from '@ionic-native/file-path';
 
 import { MusicControls } from '@ionic-native/music-controls';
 
@@ -30,8 +29,6 @@ export class ItemDetailPage {
   alertSubTitle: string;
   alertMessage: string;
 
-
-
   constructor(
     public navCtrl: NavController,
     private media: Media, 
@@ -39,7 +36,6 @@ export class ItemDetailPage {
     public loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private translateService: TranslateService,
-    private filePath: FilePath,
     navParams: NavParams, 
     items: Items, 
     platform: Platform
@@ -75,17 +71,10 @@ export class ItemDetailPage {
   
         this.radiostream = this.media.create(this.item.streamURL);       
 
-        // MusicControls requires the absolute path to the cover image. Resolved with the FilePath plugin.
-
-        this.filePath.resolveNativePath('assets/img/icon.png')
-          .then((path) => {
-            this.imgNativePath = path;
-            alert(this.imgNativePath);
-        })
-          .catch(err => alert(err));
+        // ADD A SMALL DELAY HERE; TO AVOID ERROR WHEN JUST OPENING THE VIEW AND PRESSING A BUTTON!
 
 
-        this.musicControls.subscribe().subscribe(event => {
+          this.musicControls.subscribe().subscribe(event => {
           const action = JSON.parse(event).message;
           console.log(action);
           switch(action) {
@@ -103,15 +92,15 @@ export class ItemDetailPage {
               break;
           }   
         })
-        // Listen to the Music Control plugin events:
         this.musicControls.listen();
-      });
+      })
   }
 
   presentAlert() {
 
+    // MusicControls image must be in the www-folder of the app (issues with paths in the plugin.)
     let alert = this.alertCtrl.create({
-      title: this.alertTitle,
+      title:`<img src="assets/img/oops.png" width="25px" height="25px" padding="10px"> ` + this.alertTitle,
       subTitle: this.alertSubTitle,
       message : this.alertMessage,
       enableBackdropDismiss: true
@@ -137,24 +126,26 @@ export class ItemDetailPage {
     // If audio has not been loaded yet, show a loading indicator.
     if (!this.audioIsLoaded) {
       this.presentLoadingIndicator();
+      // this.musicControls.destroy(); //
     }
 
+    // Checks that no error occurs during the connection. Only show errors when audio has not been loaded.
     this.radiostream.onError.subscribe(error => {
       this.dismissLoadingIndicator();
       this.presentAlert();
       this.buttonIconName = "play";
-    })
+    })  
 
     this.radiostream.play();
     this.audioIsPlaying = true;
     this.musicControls.create({
       track       : 'StriimiRadio',
       artist      : this.item.station,
-      cover       : this.imgNativePath,
-      dismissable : false,
+      cover       : 'musiccontrollogo.png',
+      dismissable : true,
       hasPrev     : false,
       hasNext     : false,
-      hasClose    : true
+      hasClose    : false
     })
     this.musicControls.updateIsPlaying(this.audioIsPlaying);
     // When object's status is finished loading, dismiss the loading indicator.
@@ -168,6 +159,10 @@ export class ItemDetailPage {
      */
       if (status == 2 && !this.audioIsLoaded) {
         this.audioIsLoaded = true;
+        this.dismissLoadingIndicator();
+      }
+      // Loading indicator must be removed if the audio stream is stopped and resource released.
+      if (status == 4) {
         this.dismissLoadingIndicator();
       }
     });
@@ -197,21 +192,17 @@ export class ItemDetailPage {
   }
 
   stopAudioStream() {
-    if (this.audioIsLoaded) {
-      this.radiostream.stop();
-      /* Releases the underlying operating system’s audio resources. 
-        This is particularly important for Android, since there are a finite amount of 
-        OpenCore instances for media playback. Applications should call the release function 
-        for any Media resource that is no longer needed.
-      */
-      this.radiostream.release();      
-      this.audioIsLoaded = false;
-      this.audioIsPlaying = false;
-      this.musicControls.updateIsPlaying(this.audioIsPlaying);
-      this.musicControls.destroy();
-    }
+    /* Releases the underlying operating system’s audio resources. 
+      This is particularly important for Android, since there are a finite amount of 
+      OpenCore instances for media playback. Applications should call the release function 
+      for any Media resource that is no longer needed.
+    */
+    this.radiostream.release();
+    this.audioIsLoaded = false;
+    this.audioIsPlaying = false;
+    this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    this.musicControls.destroy();
   }
-
 
   getLocalisedLanguage(item) {
 
@@ -235,6 +226,10 @@ export class ItemDetailPage {
     }
     if (item.language == 'EST') {
       this.translateService.get('DETAILS_STATION_LANG_EST').subscribe(
+        translatedString => { localisedLanguage = translatedString });
+    }
+    if (item.language == 'SAM') {
+      this.translateService.get('DETAILS_STATION_LANG_SAM').subscribe(
         translatedString => { localisedLanguage = translatedString });
     }
 

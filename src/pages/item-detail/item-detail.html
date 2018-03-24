@@ -38,6 +38,11 @@
             <p>{{ this.getLocalisedLanguage(item) }}</p>
             <br>
             <h2>
+                <ion-icon name="map"> </ion-icon> {{ 'DETAILS_STATION_AREA' | translate }}
+            </h2>
+            <p>{{ item.local }}</p>
+            <br>
+            <h2>
                 <ion-icon name="musical-notes"></ion-icon> {{ 'DETAILS_STATION_GENRES' | translate }}
             </h2>
 
@@ -45,6 +50,5 @@
 
         </div>
     </ion-card>
-
 
 </ion-content>

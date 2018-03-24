@@ -6,9 +6,7 @@ import { Item } from '../../models/item';
 export class Items {
   items: Item[] = [];
 
-  defaultItem: any = {
-  };
-
+  defaultItem: any = {};
 
   constructor() {
     let items = [
@@ -21,7 +19,7 @@ export class Items {
         "webURL": "http://www.radiorock.fi",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -33,7 +31,7 @@ export class Items {
         "webURL": "http://www.radiosuomipop.fi",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -45,7 +43,7 @@ export class Items {
         "webURL": "http://www.radioaalto.fi",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -57,7 +55,7 @@ export class Items {
         "webURL": "http://www.loop.fi",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -69,7 +67,7 @@ export class Items {
         "webURL": "http://www.helmiradio.fi",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -81,7 +79,7 @@ export class Items {
         "webURL": "http://www.groovefm.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -93,8 +91,21 @@ export class Items {
         "webURL": "https://www.kiss.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
+      },
+      {
+        "station": "Hattu Radio",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/Hattu_banner.jpg",
+        "logoPic": "assets/img/logos/Hattu_logo.jpg",
+        "streamURL": "http://radio01.nk.hel.fi:8128/;",
+        "webURL": "http://hattumedia.munstadi.fi/hatturadio/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type",
+        "local": "Helsinki"
       },
       {
         "station": "Radio City (Helsinki)",
@@ -105,7 +116,103 @@ export class Items {
         "webURL": "https://www.radiocity.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Hämeenlinna)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi/rc-hml.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Joensuu)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi/rc-jns.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Jyväskylä)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi:80/rc-jkl.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Kouvola)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi:80/rc-kvl.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Lappeenranta)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi:80/rc-lpr.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Oulu)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi:80/rc-oul.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Tampere)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi:80/rc-tre.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio City (Turku)",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream2.bauermedia.fi:80/rc-tku.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -117,7 +224,7 @@ export class Items {
         "webURL": "http://www.radionostalgia.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -129,7 +236,7 @@ export class Items {
         "webURL": "https://www.radionova.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -141,7 +248,7 @@ export class Items {
         "webURL": "http://www.nrj.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -153,7 +260,7 @@ export class Items {
         "webURL": "https://www.radiopooki.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -165,7 +272,7 @@ export class Items {
         "webURL": "https://www.radiosuomirock.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -177,7 +284,7 @@ export class Items {
         "webURL": "https://www.957.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -189,7 +296,7 @@ export class Items {
         "webURL": "http://radiosun.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -201,7 +308,7 @@ export class Items {
         "webURL": "http://businessfm.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -213,7 +320,7 @@ export class Items {
         "webURL": "https://www.radiovaasa.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -225,7 +332,7 @@ export class Items {
         "webURL": "https://www.radiovoima.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "xxx",
         "type": "translation of the music type"
       },
       {
@@ -237,7 +344,7 @@ export class Items {
         "webURL": "http://www.funtampere.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -249,8 +356,9 @@ export class Items {
         "webURL": "http://www.pispalanradio.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
-        "type": "translation of the music type"
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type",
+        "local": "Tampere, Pispala"
       },
       {
         "station": "Radio Moreeni",
@@ -261,7 +369,7 @@ export class Items {
         "webURL": "https://radio.uta.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -273,31 +381,7 @@ export class Items {
         "webURL": "http://www.radioramona.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
-        "type": "translation of the music type"
-      },
-      {
-        "station": "yle PUHE",
-        "language": "FIN",
-        "bannerPic": "assets/img/logos/yle_PUHE_banner.jpg",
-        "logoPic": "assets/img/logos/yle_PUHE_logo.jpg",
-        "streamURL": "http://www.yle.fi/livestream/puhe.asx",
-        "webURL": "http://yle.fi/puhe",
-        "about": "",
-        "note": "note placeholder",
-        "format": "asx",
-        "type": "translation of the music type"
-      },
-      {
-        "station": "YleX",
-        "language": "FIN",
-        "bannerPic": "assets/img/logos/YleX_banner.jpg",
-        "logoPic": "assets/img/logos/YleX_logo.jpg",
-        "streamURL": "http://mediau.yle.fi:80/liveylex",
-        "webURL": "https://yle.fi/ylex/",
-        "about": "",
-        "note": "note placeholder",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -309,7 +393,7 @@ export class Items {
         "webURL": "http://www.basso.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -321,7 +405,7 @@ export class Items {
         "webURL": "http://radiosputnik.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -333,7 +417,7 @@ export class Items {
         "webURL": "https://www.hitmix.fi/",
         "about": "",
         "note": "note placeholder",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "type": "translation of the music type"
       },
       {
@@ -346,7 +430,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Jyväskylä"
       },
       {
@@ -359,7 +443,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kuopio"
       },
       {
@@ -372,7 +456,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kemi"
       },
       {
@@ -385,7 +469,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Uusimaa, Helsinki, Hyvinkää, Pohja, Hanko, Porvoo"
       },
       {
@@ -398,7 +482,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Hämeenlinna"
       },
       {
@@ -411,7 +495,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Hyvinkää"
       },
       {
@@ -424,7 +508,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Jyväskylä, Jämsä, Pihtipudas"
       },
       {
@@ -437,7 +521,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kaakkois-Suomi, Kotka, Kouvola, Lappeenranta, Imatra"
       },
       {
@@ -450,7 +534,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kaakkois-Suomi, Kotka, Kouvola, Lappeenranta, Imatra"
       },
       {
@@ -463,7 +547,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kuopio"
       },
       {
@@ -476,7 +560,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Lahti, Heinola"
       },
       {
@@ -489,7 +573,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kaakkois-Suomi, Kotka, Kouvola, Lappeenranta, Imatra"
       },
       {
@@ -502,7 +586,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Mikkeli"
       },
       {
@@ -515,7 +599,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Oulu, Haapavesi, Raahe, Sievi"
       },
       {
@@ -528,7 +612,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Satakunta, Pori, Rauma, Huittinen"
       },
       {
@@ -541,7 +625,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Savonlinna"
       },
       {
@@ -554,7 +638,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Seinäjoki"
       },
       {
@@ -567,7 +651,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Rovaniemi"
       },
       {
@@ -580,7 +664,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Pohjois-Karjala, Joensuu"
       },
       {
@@ -593,7 +677,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Hämeenkyrö, Sastamala, Kankaanpää"
       },
       {
@@ -606,7 +690,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Pirkanmaa, Tampere, Valkeakoski, Vilppula, Ikaalinen"
       },
       {
@@ -619,7 +703,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Varsinais-Suomi, Turku, Loimaa, Forssa, Uusikaupunki"
       },
       {
@@ -632,7 +716,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Lohja, Helsinki, Uusimaa"
       },
       {
@@ -645,7 +729,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Vaasa"
       },
       {
@@ -658,7 +742,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Alajärvi"
       },
       {
@@ -671,7 +755,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Helsinki, Turku"
       },
       {
@@ -684,7 +768,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "xxx",
+        "format": "MPEG AAC (mp4a)",
         "local": "Åland, Mariehamn"
       },
       {
@@ -697,7 +781,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Oulu, Kemi, Tornio, Rovaniemi"
       },
       {
@@ -710,7 +794,7 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "type": "translation of the music type",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Pohjois-Savo, Iisalmi, Kuopio, Varkaus"
       },
       {
@@ -723,7 +807,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Tampere"
       },
       {
@@ -736,8 +820,8 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
-        "local": "Suomi"
+        "format": "MPEG audio layer (mpga)",
+        "local": ""
       },
       {
         "station": "Radio Dei Helsinki",
@@ -749,7 +833,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Helsinki"
       },
       {
@@ -762,7 +846,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kemi, Tornio"
       },
       {
@@ -775,7 +859,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Oulu"
       },
       {
@@ -788,7 +872,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kokkola"
       },
       {
@@ -801,7 +885,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Kristiinankaupunki"
       },
       {
@@ -814,7 +898,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Pohjanmaa, Lapua"
       },
       {
@@ -827,7 +911,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Rovaniemi"
       },
       {
@@ -840,7 +924,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Turku"
       },
       {
@@ -853,8 +937,8 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
-        "local": "Suomi, Helsinki"
+        "format": "MPEG audio layer (mpga)",
+        "local": "Helsinki"
       },
       {
         "station": "Aito Kajaus",
@@ -866,7 +950,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Suomi"
       },
       {
@@ -879,7 +963,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "mp3",
+        "format": "MPEG audio layer (mpga)",
         "local": "Suomi"
       },
       {
@@ -892,7 +976,7 @@ export class Items {
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Helsinki"
       },
       {
@@ -901,13 +985,543 @@ export class Items {
         "bannerPic": "assets/img/logos/RadioInari_banner.jpg",
         "logoPic": "assets/img/logos/RadioInari_logo.jpg",
         "streamURL": "http://188.117.31.195:8000/radioinari",
-        "webURL": "http://www.radiohelsinki.fi/",
+        "webURL": "https://www.inari.fi/fi/palvelut/sivistyspalvelut/nuorisotyo/radio-inari.html",
         "about": "",
         "note": "",
         "type": "",
-        "format": "xxx",
+        "format": "MPEG audio layer (mpga)",
         "local": "Inari, Ivalo"
-      }
+      },
+      {
+        "station": "Auran Aallot",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/AuranAallot_banner.jpg",
+        "logoPic": "assets/img/logos/AuranAallot_logo.jpg",
+        "streamURL": "http://hel2-77-86-247-184.ext.nebulacloud.fi:8000/aallot",
+        "webURL": "http://www.auranaallot.fi/",
+        "about": "",
+        "note": "",
+        "type": "",
+        "format": "MPEG audio layer (mpga)",
+        "local": "Turku"
+      },
+      {
+        "station": "Radio Mikkeli",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioMikkeli_banner.jpg",
+        "logoPic": "assets/img/logos/RadioMikkeli_logo.jpg",
+        "streamURL": "http://hel2-77-86-247-184.ext.nebulacloud.fi:8000/mikkeli",
+        "webURL": "http://www.radiomikkeli.fi/",
+        "about": "",
+        "note": "",
+        "type": "",
+        "format": "MPEG audio layer (mpga)",
+        "local": "Mikkeli"
+      },
+      {
+      "station": "Radio Pori",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/RadioPori_banner.jpg",
+      "logoPic": "assets/img/logos/RadioPori_logo.jpg",
+      "streamURL": "http://hel2-77-86-247-184.ext.nebulacloud.fi:8000/radiopori",
+      "webURL": "https://www.radiopori.fi/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": "Pori"
+    }, 
+    {
+      "station": "Radio Musa",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/RadioMusa_banner.jpg",
+      "logoPic": "assets/img/logos/RadioMusa_logo.jpg",
+      "streamURL": "http://37.187.5.67:8040/;",
+      "webURL": "http://www.hitit.fi/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": "Pirkanmaa"
+    },
+    {
+      "station": "Radio Hear",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/RadioHear_banner.jpg",
+      "logoPic": "assets/img/logos/RadioHear_logo.jpg",
+      "streamURL": "http://hear.fi:8000/h192.mp3",
+      "webURL": "http://www.hear.fi/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": ""
+    },
+    {
+      "station": "Leijonaradio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/Leijonaradio_banner.jpg",
+      "logoPic": "assets/img/logos/Leijonaradio_logo.jpg",
+      "streamURL": "http://s3.radioboss.fm:8301/live",
+      "webURL": "http://leijonaradio.online/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG AAC (mp4a)",
+      "local": ""
+    },
+    {
+      "station": "LiMu Radio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/LiMu_banner.jpg",
+      "logoPic": "assets/img/logos/LiMu_logo.jpg",
+      "streamURL": "http://193.166.72.7/limuradio.mp3?_=1",
+      "webURL": "https://www.limuradio.fi/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": "Lahti University of Applied Sciences"
+    },
+    {
+      "station": "Lasten Oma Radio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/LastenOmaRadio_banner.jpg",
+      "logoPic": "assets/img/logos/LastenOmaRadio_logo.jpg",
+      "streamURL": "http://streaming.shoutcast.com/LastenOmaRadio",
+      "webURL": "http://www.lastenomaradio.fi/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": ""
+    },
+    {
+      "station": "Kiekkoradio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/Kiekko_banner.jpg",
+      "logoPic": "assets/img/logos/Kiekko_logo.jpg",
+      "streamURL": "http://bravo-193.srv.hosting.fi:8000/kiekko.mp3",
+      "webURL": "http://kiekkoradio.com/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": ""
+    },
+    {
+      "station": "Finlandia Costa del Sol",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/RadioFinlandia_banner.jpg",
+      "logoPic": "assets/img/logos/RadioFinlandia_logo.jpg",
+      "streamURL": "http://93.190.141.15:7000/radiofinlandia",
+      "webURL": "http://radiofinlandia.net",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": "Costa del Sol, Málaga"
+    },
+    {
+      "station": "Kaaosradio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/Kaaos_banner.jpg",
+      "logoPic": "assets/img/logos/Kaaos_logo.jpg",
+      "streamURL": "http://stream.kaaosradio.fi:8000/stream",
+      "webURL": "http://www.kaaosradio.fi/",
+      "about": "",
+      "note": "",
+      "type": "",
+      "format": "MPEG audio layer (mpga)",
+      "local": ""
+    },
+    {
+      "station": "YLE Puhe",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_PUHE_banner.jpg",
+      "logoPic": "assets/img/logos/yle_PUHE_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_5@113882/master.m3u8",
+      "webURL": "http://yle.fi/puhe",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type"
+    },
+    {
+      "station": "YleX",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/YleX_banner.jpg",
+      "logoPic": "assets/img/logos/YleX_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_2@113879/master.m3u8",
+      "webURL": "https://yle.fi/ylex/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type"
+    },
+    {
+      "station": "YLE Radio 1",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_Radio1_banner.jpg",
+      "logoPic": "assets/img/logos/yle_Radio1_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_1@113878/master.m3u8",
+      "webURL": "https://areena.yle.fi/radio/ohjelmat/yle-radio-1",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type"
+    },
+    {
+      "station": "YLE Radio Suomi (Helsinki)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_3@113880/master.m3u8",
+      "webURL": "http://vintti.yle.fi/yle.fi/RS/index.html",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Häme, Hämeenlinna"
+    },
+    {
+      "station": "YLE Radio Suomi (Hämeenlinna)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_HML_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_10@113887/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Häme, Hämeenlinna"
+    },
+    {
+      "station": "YLE Radio Suomi (Joensuu)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_JOE_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_11@113888/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Pohjois-Karjala, Joensuu"
+    },
+    {
+      "station": "YLE Radio Suomi (Jyväskylä)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_JYV_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_12@113889/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Keski-Suomi, Jyväskylä"
+    },
+    {
+      "station": "YLE Radio Suomi (Kajaani)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_KAJ_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_13@113890/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Kainuu, Kajaani"
+    },
+    {
+      "station": "YLE Radio Suomi (Kemi)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_KEM_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_14@113891/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Perämeri, Kemi"
+    },
+    {
+      "station": "YLE Radio Suomi (Kokkola)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_KOK_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_15@113892/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Keski-Pohjanmaa, Kokkola"
+    },
+    {
+      "station": "YLE Radio Suomi (Kotka)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_KOT_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_16@113893/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Kymenlaakso, Kotka"
+    }, 
+    {
+      "station": "YLE Radio Suomi (Kuopio)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_KUO_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_17@113894/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Pohjois-Savo, Kuopio"
+    },
+    {
+      "station": "YLE Radio Suomi (Lahti)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_LAH_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_18@113895/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Lahti"
+    }, 
+    {
+      "station": "YLE Radio Suomi (Lappeenranta)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_LAP_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_19@113896/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Etelä-Karjala, Lappeenranta"
+    }, 
+    {
+      "station": "YLE Radio Suomi (Mikkeli)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_MIK_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_21@113898/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Etelä-Savo, Mikkeli"
+    },
+    {
+      "station": "YLE Radio Suomi (Oulu)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_OUL_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_22@113899/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Pohjois-Suomi, Oulu"
+    },
+    {
+      "station": "YLE Radio Suomi (Pohjanmaa)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_POH_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_28@113905/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Pohjanmaa"
+    },
+    {
+      "station": "YLE Radio Suomi (Pori)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_POR_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_23@113900/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Satakunta, Pori"
+    },
+    {
+      "station": "YLE Radio Suomi (Rovaniemi)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_ROV_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_25@113902/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Lappi, Rovaniemi"
+    },
+    {
+      "station": "YLE Radio Suomi (Tampere)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_TRE_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_26@113903/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Pirkanmaa, Tampere"
+    },
+    {
+      "station": "YLE Radio Suomi (Turku)",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_TUR_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_27@113904/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Turku, Åbo"
+    },
+    {
+      "station": "YLE Elävä arkisto",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_ElavaArkisto_banner.jpg",
+      "logoPic": "assets/img/logos/yle_ElavaArkisto_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_8@113885/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": ""
+    },
+    {
+      "station": "YLE Sámi Radio",
+      "language": "SAM",
+      "bannerPic": "assets/img/logos/yle_RadioSuomi_SAMI_banner.jpg",
+      "logoPic": "assets/img/logos/yle_RadioSuomi_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_33@113910/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Inari, Utsjoki, Karesuvanto"
+    },
+    {
+      "station": "YLE Vega Huvudstadsregionen",
+      "language": "SWE",
+      "bannerPic": "assets/img/logos/Yle_VEGA_Huvud_banner.jpg",
+      "logoPic": "assets/img/logos/yle_VEGA_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_7@113884/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Helsinki, Helsingfors"
+    },
+    {
+      "station": "YLE Vega Västnyland",
+      "language": "SWE",
+      "bannerPic": "assets/img/logos/Yle_VEGA_Vast_banner.jpg",
+      "logoPic": "assets/img/logos/yle_VEGA_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_30@113907/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Raasepori, Raseborg"
+    },
+    {
+      "station": "YLE Vega Åboland",
+      "language": "SWE",
+      "bannerPic": "assets/img/logos/Yle_VEGA_Abo_banner.jpg",
+      "logoPic": "assets/img/logos/yle_VEGA_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_32@113909/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Turku, Åbo"
+    },
+    {
+      "station": "YLE Vega Österbotten",
+      "language": "SWE",
+      "bannerPic": "assets/img/logos/Yle_VEGA_Oster_banner.jpg",
+      "logoPic": "assets/img/logos/yle_VEGA_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_31@113908/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Vaasa, Vasa"
+    },
+    {
+      "station": "YLE Vega Östnyland",
+      "language": "SWE",
+      "bannerPic": "assets/img/logos/Yle_VEGA_Ostny_banner.jpg",
+      "logoPic": "assets/img/logos/yle_VEGA_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_29@113906/master.m3u8",
+      "webURL": "",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Porvoo, Borgå"
+    },
+    {
+      "station": "YLE X3M",
+      "language": "SWE",
+      "bannerPic": "assets/img/logos/YleX3M_banner.jpg",
+      "logoPic": "assets/img/logos/YleX3M_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_6@113883/master.m3u8",
+      "webURL": "https://svenska.yle.fi/x3m/radio",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Helsinki, Vaasa"
+    },
+    {
+      "station": "YLE Klassinen",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yle_Klassinen_banner.jpg",
+      "logoPic": "assets/img/logos/yle_Klassinen_logo.jpg",
+      "streamURL": "https://yleuni-f.akamaihd.net/i/yleliveradiohd_4@113881/master.m3u8",
+      "webURL": "https://yle.fi/aihe/klassinen",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": ""
+    },
     ];
 
     for (let item of items) {

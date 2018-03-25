@@ -108,6 +108,19 @@ export class Items {
         "local": "Helsinki"
       },
       {
+        "station": "Radio City",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
+        "logoPic": "assets/img/logos/RadioCity_logo.jpg",
+        "streamURL": "http://stream1.bauermedia.fi/radiocity.mp3",
+        "webURL": "https://www.radiocity.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type",
+        "local": "Suomi"
+      },
+      {
         "station": "Radio City (Helsinki)",
         "language": "FIN",
         "bannerPic": "assets/img/logos/RadioCity_banner.jpg",
@@ -117,7 +130,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Helsinki"
       },
       {
         "station": "Radio City (Hämeenlinna)",
@@ -129,7 +143,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Hämeenlinna"
       },
       {
         "station": "Radio City (Joensuu)",
@@ -141,7 +156,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Joensuu"
       },
       {
         "station": "Radio City (Jyväskylä)",
@@ -153,7 +169,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Jyväskylä"
       },
       {
         "station": "Radio City (Kouvola)",
@@ -165,7 +182,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Kouvola"
       },
       {
         "station": "Radio City (Lappeenranta)",
@@ -177,7 +195,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Lappeenranta"
       },
       {
         "station": "Radio City (Oulu)",
@@ -189,7 +208,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Oulu"
       },
       {
         "station": "Radio City (Tampere)",
@@ -201,7 +221,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Tampere"
       },
       {
         "station": "Radio City (Turku)",
@@ -213,7 +234,8 @@ export class Items {
         "about": "",
         "note": "note placeholder",
         "format": "MPEG audio layer (mpga)",
-        "type": "translation of the music type"
+        "type": "translation of the music type",
+        "local": "Turku"
       },
       {
         "station": "Radio Nostalgia",
@@ -221,6 +243,18 @@ export class Items {
         "bannerPic": "assets/img/logos/RadioNostalgia_banner.jpg",
         "logoPic": "assets/img/logos/RadioNostalgia_logo.jpg",
         "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35059/mp3_128.mp3",
+        "webURL": "http://www.radionostalgia.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "Radio Nostalgia - Kotimaiset Aarteet",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/RadioNostalgiaKOTIMAISET_banner.jpg",
+        "logoPic": "assets/img/logos/RadioNostalgiaKOTIMAISET_logo.jpg",
+        "streamURL": "http://185.52.127.157/fi/55371/mp3_128.mp3",
         "webURL": "http://www.radionostalgia.fi/",
         "about": "",
         "note": "note placeholder",
@@ -240,11 +274,83 @@ export class Items {
         "type": "translation of the music type"
       },
       {
-        "station": "NRJ Radio",
+        "station": "NRJ Finland Live",
         "language": "FIN",
         "bannerPic": "assets/img/logos/NRJ_banner.jpg",
         "logoPic": "assets/img/logos/NRJ_logo.jpg",
         "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35001/mp3_128.mp3",
+        "webURL": "http://www.nrj.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "NRJ Suomihitit",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/NRJ_banner.jpg",
+        "logoPic": "assets/img/logos/NRJ_logo.jpg",
+        "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35061/mp3_128.mp3",
+        "webURL": "http://www.nrj.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "NRJ Dance",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/NRJ_dance_banner.jpg",
+        "logoPic": "assets/img/logos/NRJ_dance_logo.jpg",
+        "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35037/mp3_128.mp3",
+        "webURL": "http://www.nrj.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "NRJ Extravadance",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/NRJ_extra_banner.jpg",
+        "logoPic": "assets/img/logos/NRJ_extra_logo.jpg",
+        "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35031/mp3_128.mp3",
+        "webURL": "http://www.nrj.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "NRJ Fitness",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/NRJ_fitness_banner.jpg",
+        "logoPic": "assets/img/logos/NRJ_fitness_logo.jpg",
+        "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35017/mp3_128.mp3",
+        "webURL": "http://www.nrj.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "NRJ Lounge",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/NRJ_lounge_banner.jpg",
+        "logoPic": "assets/img/logos/NRJ_lounge_logo.jpg",
+        "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35011/mp3_128.mp3",
+        "webURL": "http://www.nrj.fi/",
+        "about": "",
+        "note": "note placeholder",
+        "format": "MPEG audio layer (mpga)",
+        "type": "translation of the music type"
+      },
+      {
+        "station": "NRJ Running",
+        "language": "FIN",
+        "bannerPic": "assets/img/logos/NRJ_run_banner.jpg",
+        "logoPic": "assets/img/logos/NRJ_run_logo.jpg",
+        "streamURL": "http://cdn.nrjaudio.fm/adwz1/fi/35051/mp3_128.mp3",
         "webURL": "http://www.nrj.fi/",
         "about": "",
         "note": "note placeholder",
@@ -707,7 +813,7 @@ export class Items {
         "local": "Varsinais-Suomi, Turku, Loimaa, Forssa, Uusikaupunki"
       },
       {
-        "station": "Iskelmä Uusimaa",
+        "station": "Iskelmä (Lohja, Uusimaa)",
         "language": "FIN",
         "bannerPic": "assets/img/logos/Iskelma_banner.jpg",
         "logoPic": "assets/img/logos/Iskelma_logo.jpg",
@@ -1522,6 +1628,156 @@ export class Items {
       "type": "translation of the music type",
       "local": ""
     },
+    {
+      "station": "Rondo Classic - Klasu",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/Klasu_banner.jpg",
+      "logoPic": "assets/img/logos/Klasu_logo.jpg",
+      "streamURL": "http://stream.iradio.fi:8000/klasu-hi.mp3",
+      "webURL": "https://rondolehti.fi/klasu/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": ""
+    },
+    {
+      "station": "Rondo Classic - Klasu Pro",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/KlasuPro_banner.jpg",
+      "logoPic": "assets/img/logos/KlasuPro_logo.jpg",
+      "streamURL": "http://stream.iradio.fi:8000/klasupro-hi.mp3",
+      "webURL": "https://rondolehti.fi/klasu-pro/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": ""
+    },
+    {
+      "station": "Viva Classica",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/VivaClassica_banner.jpg",
+      "logoPic": "assets/img/logos/VivaClassica_logo.jpg",
+      "streamURL": "http://rondo.iradio.fi:8000/viva-hi.mp3",
+      "webURL": "https://rondolehti.fi/viva-classica/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": ""
+    },
+    {
+      "station": "Yöradio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/yoradio_banner.jpg",
+      "logoPic": "assets/img/logos/yoradio_logo.jpg",
+      "streamURL": "http://188.165.138.30:8080/radio.mp3",
+      "webURL": "http://www.yöradio.fi/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": ""
+    },
+    {
+      "station": "Radioverkko.fi",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/radioverkkoFI_banner.jpg",
+      "logoPic": "assets/img/logos/radioverkkoFI_logo.jpg",
+      "streamURL": "http://kuuntele.radioverkko.fi:8000/live",
+      "webURL": "http://radioverkko.fi/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": ""
+    },
+    {
+      "station": "SaaristoRadio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/Saaristot_banner.jpg",
+      "logoPic": "assets/img/logos/Saaristot_logo.jpg",
+      "streamURL": "http://st.downtime.fi/pirate.mp3",
+      "webURL": "https://www.saaristoradio.fi/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": "Helsinki"
+    },   
+    {
+      "station": "Sisuradio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/Sisuradio_banner.jpg",
+      "logoPic": "assets/img/logos/Sisuradio_logo.jpg",
+      "streamURL": "http://http-live.sr.se/sisuradio-mp3-192?1391182534940.mp3",
+      "webURL": "http://sverigesradio.se/sisuradio",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": "Ruotsi / Sverige"
+    },
+    {
+      "station": "SSS-Radio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/SSS_banner.jpg",
+      "logoPic": "assets/img/logos/SSS_logo.jpg",
+      "streamURL": "http://217.146.76.112:8000/sss-radio",
+      "webURL": "http://www.sss-radio.ee/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": "Viro / Eesti"
+    }, 
+    {
+      "station": "Kaupunkiradio",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/kaupunkiradio_banner.jpg",
+      "logoPic": "assets/img/logos/kaupunkiradio_logo.jpg",
+      "streamURL": "http://st.downtime.fi/tm.mp3",
+      "webURL": "http://kaupunkiradio.fi/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG AAC (mp4a)",
+      "type": "translation of the music type",
+      "local": "Helsinki"
+    },
+    {
+      "station": "Nuotta-Taajuus",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/nuotta_banner.jpg",
+      "logoPic": "assets/img/logos/nuotta_logo.jpg",
+      "streamURL": "http://icecast2.nuotta.com:8000/nuotta",
+      "webURL": "https://nuotta.com/radio/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": ""
+    },
+    {
+      "station": "FinnRadio.FM",
+      "language": "FIN",
+      "bannerPic": "assets/img/logos/FinnRadio_banner.jpg",
+      "logoPic": "assets/img/logos/FinnRadio_logo.jpg",
+      "streamURL": "http://s1.voscast.com:8382/&stream2",
+      "webURL": "http://www.finnradio.fm/",
+      "about": "",
+      "note": "note placeholder",
+      "format": "MPEG audio layer (mpga)",
+      "type": "translation of the music type",
+      "local": "Costa del Sol, Fuengirola"
+    }
+
+
+
+
+
+
+
     ];
 
     for (let item of items) {

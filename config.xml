@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.striimiradio.radio" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.striimiradio.radio" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>StriimiRadio</name>
     <description>Streaming radio: Finnish radio stations.</description>
     <author email="striimiradio@gmail.com" href="">Frederik Vermaete</author>
@@ -92,8 +92,8 @@
     <plugin name="cordova-android-support-gradle-release" spec="^1.2.0">
         <variable name="ANDROID_SUPPORT_VERSION" value="27.+" />
     </plugin>
-    <engine name="browser" spec="~5.0.3" />
-    <engine name="android" spec="7.1.0" />
     <allow-navigation href="http://192.168.8.102:8100" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <engine name="browser" spec="~5.0.3" />
+    <engine name="android" spec="~7.0.0" />
 </widget>

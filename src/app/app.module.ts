@@ -7,6 +7,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AppVersion } from '@ionic-native/app-version';
 
 // Documentation: https://ionicframework.com/docs/native/media/
 import { Media, MediaObject } from '@ionic-native/media';
@@ -65,6 +66,7 @@ export function provideSettings(storage: Storage) {
   ],
   providers: [
     Api,
+    AppVersion,
     Items,
     BackgroundMode,
     LaunchReview,

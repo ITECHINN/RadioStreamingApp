@@ -36,7 +36,8 @@ export function provideSettings(storage: Storage) {
    * these values will not overwrite the saved values (this can be done manually if desired).
    */
   return new Settings(storage, {
-    option1: true,
+    // Option 1: Volume of the audiostream, this is relative to the device audio setting and does not override it!
+    option1: 0.75,
     option2: 'Ionitron J. Framework',
     option3: '3',
     option4: 'Hello'

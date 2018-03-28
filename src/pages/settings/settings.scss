@@ -1,3 +1,11 @@
 page-settings {
-
+    // Same button layout as in the Support/Help page.
+    .support-button {
+        height: 4rem;
+        width: 100%;
+        font-size: 2.4rem;
+        background-color: #99e1d9;
+        color: #32292f;
+        border: none;
+    }
 }

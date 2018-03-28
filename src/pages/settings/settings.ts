@@ -23,6 +23,8 @@ export class SettingsPage {
 
   form: FormGroup;
 
+  optionFavorite: any;
+
   profileSettings = {
     page: 'profile',
     pageTitleKey: 'SETTINGS_PAGE_PROFILE'

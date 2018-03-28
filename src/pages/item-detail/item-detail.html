@@ -10,7 +10,7 @@
     <div align="center">
         <ion-navbar>
             <img class="item-banner" src={{item.bannerPic}} />
-            <button ion-button class="media-control-buttons" mode="ios" outline="true" strong="true" (click)="changeAudioStreamAction()">
+            <button ion-button class="media-control-buttons" mode="ios" outline="true" strong="false" (click)="changeAudioStreamAction()">
                 <ion-icon name={{buttonIconName}}></ion-icon>
             </button>
         </ion-navbar>
@@ -21,7 +21,7 @@
             <h2>
                 <ion-icon name="globe"></ion-icon> {{ 'DETAILS_STATION_WEBSITE' | translate }}
             </h2>
-            <a href="{{ item.webURL }}">{{ item.webURL }}</a>
+            <a href="{{ item.webURL }} ">{{ item.webURL }}</a>
             <br/>
             <br/>
             <h2>asdasdasd</h2>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { IonicPage, NavController } from 'ionic-angular';
 
+import { Settings } from '../../providers/providers';
 import { Storage } from '@ionic/storage';
 
 import { Item } from '../../models/item';
@@ -17,7 +18,7 @@ export class ListMasterPage {
   currentItems: Item[];
   favoriteMarkedItem: Item;
 
-  constructor(public navCtrl: NavController, public items: Items, private savedData: Storage) {
+  constructor(public navCtrl: NavController, public items: Items, public settings: Settings, private savedData: Storage) {
   }
 
   /**

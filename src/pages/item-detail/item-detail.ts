@@ -28,6 +28,7 @@ export class ItemDetailPage {
   alertTitle: string;
   alertSubTitle: string;
   alertMessage: string;
+  audioMuted: boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -44,7 +45,6 @@ export class ItemDetailPage {
       this.item = navParams.get('item') || items.defaultItem;
       // On start-up the play icon may be shown.
       this.buttonIconName = "play";
-
 
       // Prepare the translations for connection alert
       this.translateService.get('ALERT_CONNECTION_TITLE').subscribe(
@@ -126,7 +126,6 @@ export class ItemDetailPage {
     // If audio has not been loaded yet, show a loading indicator.
     if (!this.audioIsLoaded) {
       this.presentLoadingIndicator();
-      // this.musicControls.destroy(); //
     }
 
     // Checks that no error occurs during the connection. Only show errors when audio has not been loaded.
@@ -237,6 +236,8 @@ export class ItemDetailPage {
   }
 
 }
+
+
 
 
 // TROUBLESHOOTING AND FIXES:

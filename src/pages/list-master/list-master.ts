@@ -18,8 +18,12 @@ export class ListMasterPage {
   currentItems: Item[];
   favoriteMarkedItem: Item;
 
-  constructor(public navCtrl: NavController, public items: Items, public settings: Settings, private savedData: Storage) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public items: Items,
+    public settings: Settings,
+    private savedData: Storage
+  ) {}
 
   /**
    * The view loaded, let's query our items for the list

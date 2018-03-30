@@ -1,51 +1,32 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>{{ pageTitle }}</ion-title>
+        <ion-title>{{ 'OPTIONS_TITLE' | translate }}</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 <ion-content>
 
-    <form [formGroup]="form" *ngIf="settingsReady">
-        <ion-list *ngIf="page == 'main'">
-            <ion-item>
-                <ion-label>{{ 'SETTINGS_OPTION1' | translate }}</ion-label>
-                <ion-range min="10" max="100" step="1" formControlName="option1">
-                    <ion-icon range-left name="volume-down"></ion-icon>
-                    <ion-icon range-right name="volume-up"></ion-icon>
-                </ion-range>
-            </ion-item>
-
-            <ion-item>
-                <ion-label>{{ 'SETTINGS_OPTION2' | translate }}</ion-label>
-                <ion-input formControlName="option2"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label>{{ 'SETTINGS_OPTION3' | translate }}</ion-label>
-                <ion-select formControlName="option3">
-                    <ion-option value="1" checked="true">1</ion-option>
-                    <ion-option value="2">2</ion-option>
-                    <ion-option value="3">3</ion-option>
-                </ion-select>
-            </ion-item>
-
-            <button ion-item [navPush]="subSettings" [navParams]="profileSettings">
-        {{ 'SETTINGS_PROFILE_BUTTON' | translate }}
-      </button>
-        </ion-list>
-
-        <ion-list *ngIf="page == 'profile'">
-            <ion-item>
-                <ion-label>{{ 'SETTINGS_OPTION4' | translate }}</ion-label>
-                <ion-input formControlName="option4"></ion-input>
-            </ion-item>
-        </ion-list>
-
-
-
-    </form>
+    <ion-card>
+        <div padding>
+            <h2 class="settings-sub-header">{{ 'OPTIONS_FEATURE_BOOSTER' | translate }}</h2>
+            <br>
+            <p>{{ 'OPTIONS_DETAILS_BOOSTER' | translate }}</p>
+            <br>
+            <ion-list>
+                <ion-item>
+                    <ion-label>{{audioStreamVolume}} %</ion-label>
+                    <ion-range min="50" max="100" step="1" [(ngModel)]="audioStreamVolume" pin="true">
+                        <ion-icon class="volume-icon" range-left name="volume-down"></ion-icon>
+                        <ion-icon class="volume-icon" range-right name="volume-up"></ion-icon>
+                    </ion-range>
+                </ion-item>
+                <div text-center>
+                    <button class="reset-button" mode="ios" outline="true" ion-button (click)="resetAudioStreamVolume()">{{ 'BUTTON_RESET' | translate }}</button>
+                </div>
+            </ion-list>
+        </div>
+    </ion-card>
 
 </ion-content>

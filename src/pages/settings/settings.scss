@@ -1,11 +1,17 @@
 page-settings {
     // Same button layout as in the Support/Help page.
-    .support-button {
+    .reset-button {
         height: 4rem;
-        width: 100%;
+        width: 20%;
         font-size: 2.4rem;
         background-color: #99e1d9;
         color: #32292f;
         border: none;
+    }
+    .settings-sub-header {
+        font-size: 24px;
+    }
+    .volume-icon {
+        font-size: 40px;
     }
 }

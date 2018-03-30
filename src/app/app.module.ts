@@ -10,8 +10,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AppVersion } from '@ionic-native/app-version';
 
 // Documentation: https://ionicframework.com/docs/native/media/
-import { Media, MediaObject } from '@ionic-native/media';
+import { Media } from '@ionic-native/media';
 import { MusicControls } from '@ionic-native/music-controls';
+import { RadioStreamService } from '../providers/radiostream/radiostream';
 
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LaunchReview } from '@ionic-native/launch-review';
@@ -73,6 +74,7 @@ export function provideSettings(storage: Storage) {
     LaunchReview,
     Media,
     MusicControls,
+    RadioStreamService,
     User,
     SplashScreen,
     StatusBar,

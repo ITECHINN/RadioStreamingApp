@@ -14,10 +14,12 @@ export class AboutPage {
 
   versionNr: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private appVersion: AppVersion) {
-
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private appVersion: AppVersion
+  ) {
     this.appVersion.getVersionNumber().
-    then(v => this.versionNr = v);
-
+      then(v => this.versionNr = v);
   }
 }

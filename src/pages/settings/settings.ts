@@ -85,6 +85,7 @@ export class SettingsPage {
 
   ngOnChanges() {
     console.log('Ng All Changes');
+    this.settings.save();
   }
 
   resetAudioStreamVolume() {

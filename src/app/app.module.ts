@@ -8,6 +8,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AppVersion } from '@ionic-native/app-version';
+import { AppAvailability } from '@ionic-native/app-availability';
 
 // Documentation: https://ionicframework.com/docs/native/media/
 import { Media } from '@ionic-native/media';
@@ -68,6 +69,7 @@ export function provideSettings(storage: Storage) {
   ],
   providers: [
     Api,
+    AppAvailability,
     AppVersion,
     Items,
     BackgroundMode,

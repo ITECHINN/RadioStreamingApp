@@ -49,18 +49,32 @@
             <p>{{ 'ABOUT_AUTHOR' | translate }} Frederik Vermaete</p>
             <p>{{ 'ABOUT_EMAIL' | translate }} <a href="mailto:striimiradio@gmail.com?subject=StriimiRadio-App">striimiradio@gmail.com</a></p>
             <br>
+            <p>
+                <ion-icon class="about-tech-icon" name="logo-facebook" (click)="openfb()"></ion-icon>
+            </p>
+            <p (click)="openfb()">Facebook: @StriimiRadio</p>
+            <br>
             <p>____________________</p>
             <br>
             <h2 class="about-sub-header">{{ 'ABOUT_INFO' | translate }}</h2>
             <br>
             <p>{{ 'ABOUT_TEXT2' | translate }}</p>
             <br>
+            <p>{{ 'ABOUT_PAYPALME' | translate }}</p>
+            <br>
+            <p class="paypal-donation">
+                <a href="https://www.paypal.me/striimiradio" target="_blank">
+                    <img src="assets/img/PayPalMe.png" alt="PayPalMe">
+                </a>
+            </p>
             <p>____________________</p>
             <br>
             <h2 class="about-sub-header">{{ 'ABOUT_CREDITS' | translate }}</h2>
             <br>
             <p>{{ 'ABOUT_TEXT3' | translate }}</p>
-            <p><a href="https://www.fontspring.com/lic/ecy0nxh8uh">{{ 'ABOUT_FONT_LICENSE'| translate }}</a></p>
+            <p>
+                <a href="https://www.fontspring.com/lic/ecy0nxh8uh">{{ 'ABOUT_FONT_LICENSE'| translate }}</a>
+            </p>
             <p>{{ 'ABOUT_TEXT4' | translate }}</p>
             <br>
             <p>{{ 'ABOUT_TEXT5' | translate }}</p>
@@ -77,12 +91,7 @@
                 <ion-icon class="about-tech-icon" name="logo-javascript"></ion-icon>
                 <ion-icon class="about-tech-icon" name="logo-css3"></ion-icon>
             </p>
-
-
-
-
-
-
         </div>
+
     </ion-card>
 </ion-content>

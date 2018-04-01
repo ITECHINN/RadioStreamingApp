@@ -26,6 +26,7 @@
     "@ionic-native/background-mode": "^4.6.0",
     "@ionic-native/camera": "4.3.3",
     "@ionic-native/core": "4.4.0",
+    "@ionic-native/email-composer": "^4.6.0",
     "@ionic-native/file": "^4.6.0",
     "@ionic-native/file-path": "^4.6.0",
     "@ionic-native/in-app-browser": "^4.6.0",
@@ -47,7 +48,6 @@
     "cordova-plugin-appavailability": "^0.4.2",
     "cordova-plugin-background-mode": "git+https://github.com/katzer/cordova-plugin-background-mode.git",
     "cordova-plugin-device": "^2.0.1",
-    "cordova-plugin-exoplayer": "^2.5.4",
     "cordova-plugin-file": "^6.0.1",
     "cordova-plugin-inappbrowser": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -84,7 +84,6 @@
       },
       "cordova-plugin-file": {},
       "cordova-plugin-app-version": {},
-      "cordova-plugin-exoplayer": {},
       "cordova-plugin-appavailability": {},
       "cordova-plugin-inappbrowser": {}
     },

@@ -13,12 +13,15 @@ import { Items } from '../../providers/providers';
 })
 export class HelpSupportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private launchReview: LaunchReview) { }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private launchReview: LaunchReview
+  ) { }
 
   openReviewPage() {
     this.launchReview.launch()
       .then( () => console.log('Launch of the store app successful!'));
-  }
-  
+  }  
 }
 

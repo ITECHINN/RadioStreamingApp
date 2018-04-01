@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IonicPage, NavController } from 'ionic-angular';
+import { Platform, LoadingController, IonicPage, NavController } from 'ionic-angular';
 
 import { Settings } from '../../providers/providers';
 import { Storage } from '@ionic/storage';
@@ -9,7 +9,8 @@ import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 
 import { BackgroundMode } from '@ionic-native/background-mode';
-import { Platform } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core'
+
 
 @IonicPage()
 @Component({
@@ -20,20 +21,32 @@ export class ListMasterPage {
 
   currentItems: Item[];
   favoriteMarkedItem: Item;
+  loading: any;
+  loadingContent: string;
 
   constructor(
     public navCtrl: NavController,
+    private translateService: TranslateService,
     public items: Items,
     public settings: Settings,
     private savedData: Storage,
+    public loadingCtrl: LoadingController,
     platform: Platform
   ) {
+
+    this.translateService.get('LIST_LOADING').subscribe(
+      translatedString => {
+        this.loadingContent = "<p>" + translatedString + "</p>"
+      }
+    ) 
   }
 
   /**
    * The view loaded, let's query our items for the list
    */
   ionViewDidLoad() {
+
+    this.presentLoadingIndicator();
 
     // Get the list of radio station items
     this.currentItems = this.items.query();
@@ -51,7 +64,7 @@ export class ListMasterPage {
             item.isFavorite = false;
           }
         })
-    })
+    }) 
 
     // Sorting: convert station names to lower case first, since sorting keeps it in account.
     this.currentItems.sort( (i, j) => {
@@ -59,6 +72,8 @@ export class ListMasterPage {
       if (i.station.toLowerCase() > j.station.toLowerCase()) return 1;
       return 0;
     })
+
+    this.dismissLoadingIndicator();
   }
 
   /**
@@ -101,4 +116,18 @@ export class ListMasterPage {
       item: item
     });
   }
+
+
+  presentLoadingIndicator() {
+    this.loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: this.loadingContent
+    });
+    this.loading.present();
+  }
+
+  dismissLoadingIndicator() {
+      this.loading.dismiss();
+  } 
+
 }

@@ -29,11 +29,11 @@
             <h2 class="help-sub-header">{{ 'HELP_SUPPORT_SUPPORT' | translate }}</h2>
             <br>
             <p>{{ 'HELP_SUPPORT_TEXT2' | translate }}</p>
-            <button class="support-button" mode="ios" outline="true" ion-button>{{ 'BUTTON_SUPPORT_CONTACT' | translate }}</button>
+            <a href="mailto:striimiradio@gmail.com?subject=StriimiRadio-App"><button class="support-button" mode="ios" outline="true" ion-button (click)="openMailComposer()">{{ 'BUTTON_SUPPORT_CONTACT' | translate }}</button></a>
         </div>
         <div padding>
             <p>{{ 'HELP_SUPPORT_TEXT3' | translate }}</p>
-            <button class="support-button" mode="ios" outline="true" ion-button (click)="openReviewPage()">{{ 'BUTTON_SUPPORT_FEEDBACK' | translate }}</button>
+            <button class="support-button" mode="ios" outline="true" ion-button>{{ 'BUTTON_SUPPORT_FEEDBACK' | translate }}</button>
         </div>
     </ion-card>
 

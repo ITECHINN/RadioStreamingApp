@@ -26,6 +26,7 @@
     "@ionic-native/background-mode": "^4.6.0",
     "@ionic-native/camera": "4.3.3",
     "@ionic-native/core": "4.4.0",
+    "@ionic-native/email-composer": "^4.6.0",
     "@ionic-native/file": "^4.6.0",
     "@ionic-native/file-path": "^4.6.0",
     "@ionic-native/in-app-browser": "^4.6.0",

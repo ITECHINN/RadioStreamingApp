@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { MusicControls } from '@ionic-native/music-controls';
 import { Media, MediaObject } from '@ionic-native/media';
 import { Platform, LoadingController, AlertController } from 'ionic-angular';
-import { TranslateService } from '@ngx-translate/core';
-import { BackgroundMode } from '@ionic-native/background-mode';
+import { TranslateService } from '@ngx-translate/core'
 
 // This service will allow other pages to easily access the actived radio's audio stream.
 @Injectable()
@@ -30,8 +29,7 @@ export class RadioStreamService {
     private translateService: TranslateService,
     public loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
-    platform: Platform,
-    private backgroundMode: BackgroundMode
+    platform: Platform
   ) {
 
       // Prepare the translations for connection alert
@@ -78,8 +76,6 @@ export class RadioStreamService {
             this.stopMedia();
             break;
         }
-        this.backgroundMode.overrideBackButton()
-        this.backgroundMode.enable();
       })
       // Listen to interaction with the Music Controls
       this.musicControls.listen();

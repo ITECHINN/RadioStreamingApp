@@ -60,7 +60,9 @@ export function provideSettings(storage: Storage) {
         deps: [HttpClient]
       }
     }),
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,  {
+      navExitApp: false
+    }),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],

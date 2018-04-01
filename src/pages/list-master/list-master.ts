@@ -9,6 +9,7 @@ import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 
 import { BackgroundMode } from '@ionic-native/background-mode';
+import { Platform } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -25,10 +26,8 @@ export class ListMasterPage {
     public items: Items,
     public settings: Settings,
     private savedData: Storage,
-    private backgroundMode: BackgroundMode
+    platform: Platform
   ) {
-    this.backgroundMode.enable();
-    this.backgroundMode.overrideBackButton();
   }
 
   /**

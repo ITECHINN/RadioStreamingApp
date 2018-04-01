@@ -7,6 +7,7 @@ import { FirstRunPage } from '../pages/pages';
 import { Settings } from '../providers/providers';
 import { BackgroundMode } from '@ionic-native/background-mode';
 
+
 @Component({
   template: `<ion-menu [content]="content">
     <ion-header>
@@ -56,7 +57,6 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.backgroundMode.enable();
-      
     });
     this.initTranslate();
   }

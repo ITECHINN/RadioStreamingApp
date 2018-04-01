@@ -16,8 +16,10 @@
             <br>
             <ion-list>
                 <ion-item>
-                    <ion-label>{{audioStreamVolume}} %</ion-label>
-                    <ion-range min="50" max="100" step="1" [(ngModel)]="audioStreamVolume" pin="true">
+                    <ion-badge class="volume-badge">{{audioStreamVolume}} %</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-range min="10" max="100" step="1" [(ngModel)]="audioStreamVolume" pin="true" (ionChange)="settingVolumeUpdated()" debounce="650">
                         <ion-icon class="volume-icon" range-left name="volume-down"></ion-icon>
                         <ion-icon class="volume-icon" range-right name="volume-up"></ion-icon>
                     </ion-range>

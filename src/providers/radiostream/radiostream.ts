@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { MusicControls } from '@ionic-native/music-controls';
 import { Media, MediaObject } from '@ionic-native/media';
 import { Platform, LoadingController, AlertController } from 'ionic-angular';
-import { TranslateService } from '@ngx-translate/core'
+import { TranslateService } from '@ngx-translate/core';
+import { Settings } from '../../providers/providers';
+
 
 // This service will allow other pages to easily access the actived radio's audio stream.
 @Injectable()
@@ -23,13 +25,18 @@ export class RadioStreamService {
   alertMessage: string;
   bufferingContent: string;
 
+  // Settings
+  options: any;
+  audioStreamVolume: any;
+
   constructor(
     media: Media,
     private musicControls: MusicControls,
     private translateService: TranslateService,
     public loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
-    platform: Platform
+    platform: Platform,
+    public settings: Settings
   ) {
 
       // Prepare the translations for connection alert
@@ -76,10 +83,21 @@ export class RadioStreamService {
             this.stopMedia();
             break;
         }
-      })
+        
+      });
+
       // Listen to interaction with the Music Controls
       this.musicControls.listen();
     })
+  }
+
+  getAudioStreamVolume(){
+    // Refresh the setting for the AudioStream Volume Boosting.
+    this.settings.load().then(() => {
+      this.options = this.settings.allSettings;
+      this.audioStreamVolume = this.options.option1;
+    });
+    return (this.audioStreamVolume/100);
   }
 
   // Set Media Object to this RadioStream
@@ -150,6 +168,8 @@ export class RadioStreamService {
       (3) = paused 
       (4) = stopped / released
       */
+     this.audioMedia.setVolume(this.getAudioStreamVolume());
+     
       if (status == 2 && !this.audioIsLoaded) {
         this.audioIsLoaded = true;
         this.dismissLoadingIndicator();  

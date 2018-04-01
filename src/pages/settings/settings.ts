@@ -16,7 +16,7 @@ import { Settings } from '../../providers/providers';
   templateUrl: 'settings.html'
 })
 export class SettingsPage {
-  // Our local settings object
+
   audioStreamVolume: any;
   // Here all the possible options are stored.
   options: any;
@@ -78,13 +78,12 @@ export class SettingsPage {
       this.settingsReady = true;
       this.options = this.settings.allSettings;
       this.audioStreamVolume = this.options.option1;
-
       this._buildForm();
     });
   }
 
-  ngOnChanges() {
-    console.log('Ng All Changes');
+  settingVolumeUpdated(){
+    this.settings.setValue('option1', this.audioStreamVolume);
     this.settings.save();
   }
 

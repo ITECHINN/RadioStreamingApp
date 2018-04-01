@@ -14,4 +14,16 @@ page-settings {
     .volume-icon {
         font-size: 40px;
     }
+    .volume-level {
+        background-color: #99e1d9;
+        font-size: 35px;
+    }
+    .volume-badge {
+        justify-content: center;
+        margin-left: 46%;
+        margin-right: 46%;
+        display: flex;
+        flex-direction: row;
+        //align-items: baseline;
+    }
 }

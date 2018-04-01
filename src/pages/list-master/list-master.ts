@@ -8,6 +8,8 @@ import { Storage } from '@ionic/storage';
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 
+import { BackgroundMode } from '@ionic-native/background-mode';
+
 @IonicPage()
 @Component({
   selector: 'page-list-master',
@@ -22,8 +24,12 @@ export class ListMasterPage {
     public navCtrl: NavController,
     public items: Items,
     public settings: Settings,
-    private savedData: Storage
-  ) {}
+    private savedData: Storage,
+    private backgroundMode: BackgroundMode
+  ) {
+    this.backgroundMode.enable();
+    this.backgroundMode.overrideBackButton();
+  }
 
   /**
    * The view loaded, let's query our items for the list

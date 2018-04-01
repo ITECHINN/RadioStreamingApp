@@ -23,7 +23,7 @@
     "@ionic-native/android-exoplayer": "^4.6.0",
     "@ionic-native/app-availability": "^4.6.0",
     "@ionic-native/app-version": "^4.6.0",
-    "@ionic-native/background-mode": "^4.5.3",
+    "@ionic-native/background-mode": "^4.6.0",
     "@ionic-native/camera": "4.3.3",
     "@ionic-native/core": "4.4.0",
     "@ionic-native/file": "^4.6.0",

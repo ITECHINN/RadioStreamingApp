@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 import { FirstRunPage } from '../pages/pages';
 import { Settings } from '../providers/providers';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -46,13 +47,16 @@ export class MyApp {
     settings: Settings, 
     private config: Config, 
     private statusBar: StatusBar, 
-    private splashScreen: SplashScreen) {
+    private splashScreen: SplashScreen,
+    private backgroundMode: BackgroundMode) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.backgroundMode.enable();
+      
     });
     this.initTranslate();
   }

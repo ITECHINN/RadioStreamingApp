@@ -126,8 +126,32 @@ export class ItemDetailPage {
       this.translateService.get('DETAILS_STATION_LANG_SAM').subscribe(
         translatedString => { localisedLanguage = translatedString });
     }
-
     return localisedLanguage;
   }
+
+  getLocalisedGenres(item) {
+
+    let genresString: string = "";
+
+    for (var index = 0; index < item.genres.length; index++) {
+
+      var genreLogicalName = item.genres[index];
+
+      if (genreLogicalName) {
+
+        this.translateService.get(genreLogicalName).subscribe(
+          translation => { genresString = genresString + translation + ", " })
+
+        
+
+      } 
+      
+    }
+    return genresString;
+  }
+
+
+
+
 
 }

@@ -24,29 +24,30 @@
             <a href="{{ item.webURL }} ">{{ item.webURL }}</a>
             <br/>
             <br/>
-            <h2>asdasdasd</h2>
-            <p>Some more text here</p>
-            <br>
+
+            <h2>
+                <ion-icon name="musical-notes"></ion-icon> {{ 'DETAILS_STATION_GENRES' | translate }}
+            </h2>
+            <p>{{ this.getLocalisedGenres(item) }}</p>
+            <br/>
+
             <h2>
                 <ion-icon name="pulse"> </ion-icon> {{ 'DETAILS_STREAM_FORMAT' | translate }}
             </h2>
             <p>{{ item.format }}</p>
-            <br>
+            <br/>
+
             <h2>
                 <ion-icon name="text"> </ion-icon> {{ 'DETAILS_STATION_LANGUAGE' | translate }}
             </h2>
             <p>{{ this.getLocalisedLanguage(item) }}</p>
-            <br>
+            <br/>
+
             <h2>
                 <ion-icon name="map"> </ion-icon> {{ 'DETAILS_STATION_AREA' | translate }}
             </h2>
             <p>{{ item.local }}</p>
-            <br>
-            <h2>
-                <ion-icon name="musical-notes"></ion-icon> {{ 'DETAILS_STATION_GENRES' | translate }}
-            </h2>
-
-
+            <br/>
 
         </div>
     </ion-card>

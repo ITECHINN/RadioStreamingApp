@@ -11,8 +11,8 @@
                 </ion-buttons>
             </ion-row>
 
-            <ion-row>
-                <button *ngIf="this.favoriteMarkedItem" start id="button-favorite-station" ion-item (click)="openItem(this.favoriteMarkedItem)">
+            <ion-row *ngIf="this.favoriteMarkedItem">
+                <button start id="button-favorite-station" ion-item (click)="openItem(this.favoriteMarkedItem)">
                     <ion-avatar item-start>
                         <img [src]="this.favoriteMarkedItem.logoPic" />
                     </ion-avatar>
@@ -32,7 +32,7 @@
 
 <ion-content>
 
-    <ion-list class="stations-list">
+    <ion-list class="list-top">
         <ion-item-sliding *ngFor="let item of currentItems">
             <button ion-item (click)="openItem(item)">
                     <ion-avatar item-start>

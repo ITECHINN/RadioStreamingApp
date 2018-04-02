@@ -133,7 +133,7 @@ export class RadioStreamService {
 
   // PLAY the RadioStream
   playMedia() {
-
+    // MusicControls image must be in the www-folder of the app (issues with paths in the plugin.)
     // Set the details to the Music Control
     this.musicControls.create({
       track       : 'StriimiRadio',
@@ -207,10 +207,12 @@ export class RadioStreamService {
 
   // PAUSE the RadioStream
   pauseMedia() {
-    this.audioMedia.pause();
-    this.audioIsLoaded = true;
-    this.audioIsPlaying = false;
-    this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    if (this.audioIsPlaying == true) {
+      this.audioMedia.pause();
+      //this.audioIsLoaded = true;
+      this.audioIsPlaying = false;
+      this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    }
   }
 
   presentLoadingIndicator() {
@@ -225,17 +227,22 @@ export class RadioStreamService {
     if(this.loading && this.audioIsLoaded){
       this.loading.dismiss();
     }
-  } 
+  }
+
+  forceDismissLoadingIndicator() {
+    this.loading.dismiss();  
+  }
 
   presentAlert() {
 
-    // MusicControls image must be in the www-folder of the app (issues with paths in the plugin.)
-    let alert = this.alertCtrl.create({
+    let connAlert = this.alertCtrl.create({
       title:`<img src="assets/img/oops.png" width="25px" height="25px" padding="10px"> ` + this.alertTitle,
       subTitle: this.alertSubTitle,
       message : this.alertMessage,
       enableBackdropDismiss: true
     })
-    alert.present();
+    connAlert.present();
+    this.forceDismissLoadingIndicator();
+    this.stopMedia();
   }
 }

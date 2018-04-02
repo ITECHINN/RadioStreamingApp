@@ -2,8 +2,9 @@ page-list-master {
     .favorite-icon {
         color: #705d56;
     }
-    .stations-list {
-        margin-top: 55px;
+    .list-top {
+        margin-top: auto;
+        position: relative;
     }
     #button-favorite-station {
         background-color: #f0f7f4;

@@ -19,16 +19,18 @@
     <ion-card>
         <div padding>
             <h2>
-                <ion-icon name="globe"></ion-icon> {{ 'DETAILS_STATION_WEBSITE' | translate }}
-            </h2>
-            <a href="{{ item.webURL }} ">{{ item.webURL }}</a>
-            <br/>
-            <br/>
-
-            <h2>
                 <ion-icon name="musical-notes"></ion-icon> {{ 'DETAILS_STATION_GENRES' | translate }}
             </h2>
             <p class="station-content">{{ this.getLocalisedGenres(item) }}</p>
+            <br/>
+
+            <h2>
+                <ion-icon name="globe"></ion-icon> {{ 'DETAILS_STATION_WEBSITE' | translate }}
+            </h2>
+            <p class="station-content">
+                <a href (click)="openExternalBrowser(item.webURL)">{{ item.webURL }}</a>
+            </p>
+            <br/>
             <br/>
 
             <h2>

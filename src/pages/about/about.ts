@@ -23,10 +23,16 @@ export class AboutPage {
     public navParams: NavParams,
     private appVersion: AppVersion,
     private appAvailability: AppAvailability,
-    private platform: Platform
-  ) {
+    private platform: Platform,
+    private iab: InAppBrowser
+  ) 
+  {
     this.appVersion.getVersionNumber().
       then(v => this.versionNr = v);
+  }
+
+  openExternalBrowser(link) {
+    this.iab.create(link, '_system');
   }
 
   openfb() {

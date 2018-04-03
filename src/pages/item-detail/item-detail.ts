@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Media, MediaObject } from '@ionic-native/media';
 import { RadioStreamService } from '../../providers/radiostream/radiostream';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { TranslateService } from '@ngx-translate/core';
 
 import { Items } from '../../providers/providers';
@@ -35,7 +35,8 @@ export class ItemDetailPage {
     navParams: NavParams, 
     items: Items,
     radioStreamService: RadioStreamService,
-    platform: Platform
+    platform: Platform,
+    private iab: InAppBrowser
   )
   {
       this.item = navParams.get('item') || items.defaultItem;
@@ -60,7 +61,9 @@ export class ItemDetailPage {
 
   }
 
-
+  openExternalBrowser(link) {
+    this.iab.create(link, '_system');
+  }
 
   changeAudioStreamAction() {
 

@@ -9,6 +9,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AppVersion } from '@ionic-native/app-version';
 import { AppAvailability } from '@ionic-native/app-availability';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 // Documentation: https://ionicframework.com/docs/native/media/
 import { Media } from '@ionic-native/media';
@@ -75,6 +76,7 @@ export function provideSettings(storage: Storage) {
     AppVersion,
     Items,
     BackgroundMode,
+    InAppBrowser,
     LaunchReview,
     Media,
     MusicControls,

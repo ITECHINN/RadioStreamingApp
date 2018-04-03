@@ -126,6 +126,14 @@ export class ItemDetailPage {
       this.translateService.get('DETAILS_STATION_LANG_SAM').subscribe(
         translatedString => { localisedLanguage = translatedString });
     }
+    if (item.language == 'OTH') {
+      this.translateService.get('DETAILS_STATION_LANG_OTH').subscribe(
+        translatedString => { localisedLanguage = translatedString });
+    }
+      if (item.language == 'MUS') {
+        this.translateService.get('DETAILS_STATION_LANG_MUS').subscribe(
+          translatedString => { localisedLanguage = translatedString });
+      }
     return localisedLanguage;
   }
 

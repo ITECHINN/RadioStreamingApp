@@ -28,25 +28,26 @@
             <h2>
                 <ion-icon name="musical-notes"></ion-icon> {{ 'DETAILS_STATION_GENRES' | translate }}
             </h2>
-            <p>{{ this.getLocalisedGenres(item) }}</p>
+            <p class="station-content">{{ this.getLocalisedGenres(item) }}</p>
             <br/>
 
             <h2>
                 <ion-icon name="pulse"> </ion-icon> {{ 'DETAILS_STREAM_FORMAT' | translate }}
             </h2>
-            <p>{{ item.format }}</p>
+            <p class="station-content">{{ item.format }}</p>
+            <p class="station-content">{{ 'DETAILS_STREAM_BITRATE' | translate }} {{ item.bitrate }} {{ 'DETAILS_STREAM_BITRATE_UNIT' | translate }}</p>
             <br/>
 
             <h2>
                 <ion-icon name="text"> </ion-icon> {{ 'DETAILS_STATION_LANGUAGE' | translate }}
             </h2>
-            <p>{{ this.getLocalisedLanguage(item) }}</p>
+            <p class="station-content">{{ this.getLocalisedLanguage(item) }}</p>
             <br/>
 
             <h2>
                 <ion-icon name="map"> </ion-icon> {{ 'DETAILS_STATION_AREA' | translate }}
             </h2>
-            <p>{{ item.local }}</p>
+            <p class="station-content">{{ item.local }}</p>
             <br/>
 
         </div>

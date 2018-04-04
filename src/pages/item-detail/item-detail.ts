@@ -51,14 +51,11 @@ export class ItemDetailPage {
 
         this.rsService = radioStreamService;
 
-        // If the opened Station page is the currently playing one, show a Pause button!
-        if (this.rsService.getMusicControlStation() == this.item.station && this.rsService.getAudioPlayStatus()) {
+        // If the opened Station item page is the currently playing one, show a Pause button!
+        if (this.rsService.getMusicControlStation() == this.item.station && this.rsService.getAudioIsPlayingStatus()) {
           this.buttonIconName = "pause";
         }
-
-
       })
-
   }
 
   openExternalBrowser(link) {
@@ -66,36 +63,44 @@ export class ItemDetailPage {
   }
 
   changeAudioStreamAction() {
-
     /* 
-      Case: the radio station in the Radio Stream Service is the same as the one currently visited.
+      Case 1: the radio station in the Radio Stream Service is the same as the one currently visited.
     */
     if (this.rsService.getMusicControlStation() == this.item.station) {
 
-      if (this.buttonIconName == "play") {
-        // Change the icon of the media button
+      if (this.rsService.getAudioIsLoadedStatus() == true) {
+
+        if (this.rsService.getAudioIsPlayingStatus() == true) {
+          // Audio is playing, must be paused. Icon must be changed for Play interaction.
+          this.buttonIconName = "play";
+          this.rsService.pauseMedia();
+        }
+        else {
+          // Audio is not playing, let's play it. Set the icon to Pause interaction status.
+          this.buttonIconName = "pause";
+          this.rsService.playMedia();
+        }
+      }
+      // For some reason (e.g. closing MusicControl), the radio station was loaded before, but has been stopped and released ("unloaded")
+      else {
+        // Let's play the audio again, since user has not changed the radio station, change the icon for Pause interaction.
         this.buttonIconName = "pause";
         this.rsService.playMedia();
       }
-      else {
-        // Change the icon of the media button
-        this.buttonIconName = "play";
-        this.rsService.pauseMedia();
-      }
     }
     /* 
-      Case: the radio station in the Radio Stream Service is DIFFERENT than the one currently visited.
+      Case 2: the radio station in the Radio Stream Service is DIFFERENT than the one currently visited.
       Stop that stream first, before starting to play the new one!
     */
     else {
-      if (this.rsService.getAudioLoadStatus()) {
-        this.buttonIconName = "play";
+      // Check if audio was loaded, then stop it. No need for 'else', because we don't need to interact with unloaded audio here.
+      if (this.rsService.getAudioIsLoadedStatus()) {
         this.rsService.stopMedia();
       }
-      // Set new media and station name to the Stream Service.
+      // Audio is stopped, so set new media and station name to the Stream Service.
       this.rsService.setMedia(this.radiostream);
       this.rsService.setMusicControlStation(this.item.station);
-
+      // Now we can play the media and change the interaction button to pause.
       this.buttonIconName = "pause";
       this.rsService.playMedia();
     }

@@ -120,19 +120,15 @@ export class RadioStreamService {
     return this.audioMedia;
   }
 
-  getAudioPlayStatus() {
+  getAudioIsPlayingStatus() {
     return this.audioIsPlaying;
   }
 
-  getAudioLoadStatus() {
+  getAudioIsLoadedStatus() {
     return this.audioIsLoaded;
   }
 
-
-
-
-  // PLAY the RadioStream
-  playMedia() {
+  createMusicControls() {
     // MusicControls image must be in the www-folder of the app (issues with paths in the plugin.)
     // Set the details to the Music Control
     this.musicControls.create({
@@ -144,17 +140,26 @@ export class RadioStreamService {
       hasNext     : false,
       hasClose    : false
     })
+  }
 
+  // PLAY the RadioStream
+  playMedia() {
     // If audio has not been loaded yet, show a loading indicator.
     if (!this.audioIsLoaded) {
       this.presentLoadingIndicator();
     }
 
-    this.audioMedia.play();
-    this.audioIsPlaying = true;
+    // Create the Music Control interface
+    this.createMusicControls();
 
-    // Checks that no error occurs during the connection. Only show errors when audio has not been loaded.
+    // Start the audio playing
+    this.audioMedia.play();
+    
+
+    // Checks that no error occurs during the connection.
     this.audioMedia.onError.subscribe(error => {
+      this.audioIsLoaded = false;
+      this.audioIsPlaying = false;
       this.dismissLoadingIndicator();
       this.presentAlert();
     }) 
@@ -170,20 +175,38 @@ export class RadioStreamService {
       */
      this.audioMedia.setVolume(this.getAudioStreamVolume());
      
-      if (status == 2 && !this.audioIsLoaded) {
+      // if (status == 2 && !this.audioIsLoaded) {
+      //   this.audioIsLoaded = true;
+      //   this.dismissLoadingIndicator(); 
+      // }
+
+      if (status == 2) {
         this.audioIsLoaded = true;
-        this.dismissLoadingIndicator();  
+        this.dismissLoadingIndicator(); 
+        this.audioIsPlaying = true;
+        this.musicControls.updateIsPlaying(this.audioIsPlaying);
+      }
+      if (status == 3) {
+        this.audioIsPlaying = false;
+        this.musicControls.updateIsPlaying(this.audioIsPlaying);
       }
       // Loading indicator must be removed if the audio stream is stopped and resource released.
       if (status == 4) {
         this.audioIsLoaded = false;
         this.audioIsPlaying = false;
         this.dismissLoadingIndicator();
+        this.musicControls.updateIsPlaying(this.audioIsPlaying);
       }
     });
+  }
 
-    this.musicControls.updateIsPlaying(this.audioIsPlaying);
-
+  // PAUSE the RadioStream
+  pauseMedia() {
+    if (this.audioIsPlaying == true) {
+      this.audioMedia.pause();
+      this.audioIsPlaying = false;
+      this.musicControls.updateIsPlaying(this.audioIsPlaying);
+    }
   }
 
   // Call a STOP function on the RadioStream
@@ -201,18 +224,6 @@ export class RadioStreamService {
     this.musicControls.updateIsPlaying(this.audioIsPlaying);
     this.musicControls.destroy();
    }
-  }
-
-
-
-  // PAUSE the RadioStream
-  pauseMedia() {
-    if (this.audioIsPlaying == true) {
-      this.audioMedia.pause();
-      //this.audioIsLoaded = true;
-      this.audioIsPlaying = false;
-      this.musicControls.updateIsPlaying(this.audioIsPlaying);
-    }
   }
 
   presentLoadingIndicator() {

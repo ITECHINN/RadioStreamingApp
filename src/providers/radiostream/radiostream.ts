@@ -59,36 +59,7 @@ export class RadioStreamService {
         translatedString => {
           this.bufferingContent = "<p>" + translatedString + "</p>"
         }
-      )     
-    platform.ready().then(() => {
-
-      // Okay, so the platform is ready and our plugins are available.
-      console.log("Platform is ready for MusicControls!");
-
-        this.musicControls.subscribe().subscribe(event => {
-
-        const action = JSON.parse(event).message;
-
-        switch(action) {
-          case 'music-controls-play':
-            this.playMedia();
-            break;
-          case 'music-controls-pause':
-            this.pauseMedia();
-            break;
-          case 'music-controls-destroy':
-            this.stopMedia();
-            break;
-          default:
-            this.stopMedia();
-            break;
-        }
-        
-      });
-
-      // Listen to interaction with the Music Controls
-      this.musicControls.listen();
-    })
+      )
   }
 
   getAudioStreamVolume(){
@@ -195,7 +166,7 @@ export class RadioStreamService {
         this.audioIsLoaded = false;
         this.audioIsPlaying = false;
         this.dismissLoadingIndicator();
-        this.musicControls.updateIsPlaying(this.audioIsPlaying);
+        this.musicControls.destroy();
       }
     });
   }

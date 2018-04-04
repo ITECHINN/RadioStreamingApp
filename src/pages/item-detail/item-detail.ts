@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, NgZone } from '@angular/core';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
 import { Media, MediaObject } from '@ionic-native/media';
 import { RadioStreamService } from '../../providers/radiostream/radiostream';
@@ -8,6 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { Items } from '../../providers/providers';
 import { Platform } from 'ionic-angular';
+
+import { MusicControls } from '@ionic-native/music-controls';
 
 
 @IonicPage()
@@ -23,9 +25,6 @@ export class ItemDetailPage {
   audioIsPlaying: boolean;
   audioIsLoaded: boolean;
   buttonIconName: any;
-
-  //radioStreamService: RadioStreamService;
-
   rsService: RadioStreamService;
 
   constructor(
@@ -36,12 +35,21 @@ export class ItemDetailPage {
     items: Items,
     radioStreamService: RadioStreamService,
     platform: Platform,
-    private iab: InAppBrowser
+    private iab: InAppBrowser,
+    private musicControls: MusicControls,
+    public events: Events,
+    private zone: NgZone
   )
   {
       this.item = navParams.get('item') || items.defaultItem;
       // On start-up the play icon may be shown.
       this.buttonIconName = "play";
+
+      this.events.subscribe('updateScreen', () => {
+        this.zone.run( () => {
+          console.log('Refreshing the screen to correctly show the Play/Pause media icons.');
+        });
+      });
 
       platform.ready().then(() => {
 
@@ -55,11 +63,41 @@ export class ItemDetailPage {
         if (this.rsService.getMusicControlStation() == this.item.station && this.rsService.getAudioIsPlayingStatus()) {
           this.buttonIconName = "pause";
         }
-      })
-  }
 
-  openExternalBrowser(link) {
-    this.iab.create(link, '_system');
+        console.log("Platform is ready for MusicControls!");
+
+          // Listen to events on the Music Controller and update the icons accordingly (UI change only)
+          // The media actions are handled inside of the RadioStreamService script.
+        this.musicControls.subscribe().subscribe(event => {
+
+          const toDo = JSON.parse(event).message;
+
+          switch(toDo) {
+
+            case 'music-controls-play':
+              this.buttonIconName = "pause";
+              this.rsService.playMedia();
+              break;
+            case 'music-controls-pause':
+              this.buttonIconName = "play";
+              this.rsService.pauseMedia();
+              break;
+            case 'music-controls-destroy':
+              this.buttonIconName = "play";
+              this.rsService.stopMedia();
+              this.musicControls.destroy();
+            default:
+              //this.buttonIconName = "pause";
+              this.rsService.stopMedia();
+              this.musicControls.destroy();
+              break;
+          }
+          this.events.publish('updateScreen');
+        });
+
+        // Listen to interaction with the Music Controls
+        this.musicControls.listen();
+      })
   }
 
   changeAudioStreamAction() {
@@ -97,6 +135,7 @@ export class ItemDetailPage {
       if (this.rsService.getAudioIsLoadedStatus()) {
         this.rsService.stopMedia();
       }
+
       // Audio is stopped, so set new media and station name to the Stream Service.
       this.rsService.setMedia(this.radiostream);
       this.rsService.setMusicControlStation(this.item.station);
@@ -104,6 +143,7 @@ export class ItemDetailPage {
       this.buttonIconName = "pause";
       this.rsService.playMedia();
     }
+    this.events.publish('updateScreen');
   }
 
   getLocalisedLanguage(item) {
@@ -170,8 +210,11 @@ export class ItemDetailPage {
     return genresString;
   }
 
+    openExternalBrowser(link) {
+    this.iab.create(link, '_system');
+  }
 
-
+  onChange() {}
 
 
 }

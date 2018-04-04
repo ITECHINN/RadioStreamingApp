@@ -11,7 +11,7 @@
         <ion-navbar>
             <img class="item-banner" src={{item.bannerPic}} />
             <button ion-button class="media-control-buttons" mode="ios" outline="true" strong="false" (click)="changeAudioStreamAction()">
-                <ion-icon name={{buttonIconName}}></ion-icon>
+                <ion-icon id="media-control-icon" [name]="buttonIconName"></ion-icon>
             </button>
         </ion-navbar>
     </div>

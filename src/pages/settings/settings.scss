@@ -1,8 +1,9 @@
 page-settings {
     // Same button layout as in the Support/Help page.
-    .reset-button {
+    .reset-button,
+    .settings-button {
         height: 4rem;
-        width: 20%;
+        width: 50%;
         font-size: 2.4rem;
         background-color: #99e1d9;
         color: #32292f;

@@ -11,9 +11,9 @@
     <ion-card>
         <div padding>
             <h2 class="settings-sub-header">{{ 'OPTIONS_FEATURE_BOOSTER' | translate }}</h2>
-            <br>
+            <br/>
             <p>{{ 'OPTIONS_DETAILS_BOOSTER' | translate }}</p>
-            <br>
+            <br/>
             <ion-list>
                 <ion-item>
                     <ion-badge class="volume-badge">{{audioStreamVolume}} %</ion-badge>
@@ -28,6 +28,28 @@
                     <button class="reset-button" mode="ios" outline="true" ion-button (click)="resetAudioStreamVolume()">{{ 'BUTTON_RESET' | translate }}</button>
                 </div>
             </ion-list>
+        </div>
+    </ion-card>
+
+    <ion-card>
+        <div padding>
+            <h2 class="settings-sub-header">{{ 'OPTIONS_SETTINGS' | translate }}</h2>
+            <br/>
+            <p>{{ 'OPTIONS_SETTINGS' | translate }}</p>
+            <br/>
+            <p>{{ 'OPTIONS_SETTINGS_TEXT' | translate }}</p>
+            <br/>
+            <div text-center>
+                <button class="settings-button" mode="ios" outline="true" ion-button (click)="openBluetoothSettings()">{{ 'BUTTON_BLUETOOTH_SETTINGS' | translate }}</button>
+            </div>
+            <br/>
+            <div text-center>
+                <button class="settings-button" mode="ios" outline="true" ion-button (click)="openWiFiSettings()">{{ 'BUTTON_WIFI_SETTINGS' | translate }}</button>
+            </div>
+            <br/>
+            <div text-center>
+                <button class="settings-button" mode="ios" outline="true" ion-button (click)="openMobileDataSettings()">{{ 'BUTTON_MOBILE_DATA_SETTINGS' | translate }}</button>
+            </div>
         </div>
     </ion-card>
 

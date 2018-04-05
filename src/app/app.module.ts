@@ -10,6 +10,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AppVersion } from '@ionic-native/app-version';
 import { AppAvailability } from '@ionic-native/app-availability';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { OpenNativeSettings } from '@ionic-native/open-native-settings';
 
 // Documentation: https://ionicframework.com/docs/native/media/
 import { Media } from '@ionic-native/media';
@@ -80,6 +81,7 @@ export function provideSettings(storage: Storage) {
     LaunchReview,
     Media,
     MusicControls,
+    OpenNativeSettings,
     RadioStreamService,
     User,
     SplashScreen,

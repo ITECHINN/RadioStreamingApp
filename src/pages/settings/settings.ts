@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { OpenNativeSettings } from '@ionic-native/open-native-settings';
 import { Settings } from '../../providers/providers';
 
 /**
@@ -42,7 +42,8 @@ export class SettingsPage {
     public settings: Settings,
     public formBuilder: FormBuilder,
     public navParams: NavParams,
-    public translate: TranslateService) {
+    public translate: TranslateService,
+    private openNativeSettings: OpenNativeSettings) {
   }
 
   _buildForm() {
@@ -90,4 +91,17 @@ export class SettingsPage {
   resetAudioStreamVolume() {
     this.audioStreamVolume = 75;
   }
+
+  openBluetoothSettings() {
+    this.openNativeSettings.open("bluetooth");
+  }
+
+  openMobileDataSettings() {
+    this.openNativeSettings.open("data_roaming");
+  }
+
+  openWiFiSettings() {
+    this.openNativeSettings.open("wifi");
+  }
+
 }

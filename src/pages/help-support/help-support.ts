@@ -3,9 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { LaunchReview } from '@ionic-native/launch-review';
 
-import { Item } from '../../models/item';
-import { Items } from '../../providers/providers';
-
 @IonicPage()
 @Component({
   selector: 'page-help-support',

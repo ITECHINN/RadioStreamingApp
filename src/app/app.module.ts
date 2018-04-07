@@ -22,9 +22,8 @@ import { LaunchReview } from '@ionic-native/launch-review';
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
-import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
-import { MyApp } from './app.component';
+import { StriimiRadioApp } from './app.component';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -42,15 +41,12 @@ export function provideSettings(storage: Storage) {
   return new Settings(storage, {
     // Option 1: Volume of the audiostream, this is relative to the device audio setting and does not override it!
     option1: 75,
-    option2: 'Ionitron J. Framework',
-    option3: '3',
-    option4: 'Hello'
   });
 }
 
 @NgModule({
   declarations: [
-    MyApp
+    StriimiRadioApp
   ],
   imports: [
     BrowserModule,
@@ -62,14 +58,16 @@ export function provideSettings(storage: Storage) {
         deps: [HttpClient]
       }
     }),
-    IonicModule.forRoot(MyApp,  {
-      navExitApp: false
+    IonicModule.forRoot(StriimiRadioApp,  {
+      mode: 'md',
+      navExitApp: false,
+      tabsHideOnSubPages: false
     }),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    StriimiRadioApp
   ],
   providers: [
     Api,
@@ -83,7 +81,6 @@ export function provideSettings(storage: Storage) {
     MusicControls,
     OpenNativeSettings,
     RadioStreamService,
-    User,
     SplashScreen,
     StatusBar,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },

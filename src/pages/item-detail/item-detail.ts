@@ -11,7 +11,6 @@ import { Platform } from 'ionic-angular';
 
 import { MusicControls } from '@ionic-native/music-controls';
 
-
 @IonicPage()
 @Component({
   selector: 'page-item-detail',
@@ -34,7 +33,7 @@ export class ItemDetailPage {
     navParams: NavParams, 
     items: Items,
     radioStreamService: RadioStreamService,
-    platform: Platform,
+    private platform: Platform,
     private iab: InAppBrowser,
     private musicControls: MusicControls,
     public events: Events,
@@ -202,19 +201,32 @@ export class ItemDetailPage {
         this.translateService.get(genreLogicalName).subscribe(
           translation => { genresString = genresString + translation + ", " })
 
-        
-
-      } 
-      
+      }     
     }
     return genresString;
   }
 
-    openExternalBrowser(link) {
+  openExternalBrowser(link) {
     this.iab.create(link, '_system');
   }
 
-  onChange() {}
+  //onChange() {}
 
+  
+/*   ionViewWillEnter() {
+    // Override the HW Back button behavior, so the app does not exit in this view, but returns to the Tab page.
+    this.platform.registerBackButtonAction( () => {
+      this.navCtrl.pop();
+    });
+    alert("PRESSING THE BACK BUTTON WILL NOW RETURN TO THE TABS PAGE");
+  } */
+    
+/*   ionViewWillLeave() {
+    // Override the HW Back button behavior, so the app does not exit in this view, but returns to the Tab page.
+    this.platform.registerBackButtonAction( () => {
+      this.navCtrl.pop();
+    });
+    alert("LEAVING NOW FROM THE ITEM DETAILS LIST");
+  } */
 
 }

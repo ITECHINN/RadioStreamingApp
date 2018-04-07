@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Platform, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppVersion } from '@ionic-native/app-version';
 import { AppAvailability } from '@ionic-native/app-availability';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { Item } from '../../models/item';
-import { Items } from '../../providers/providers';
-import { Platform } from 'ionic-angular';
 
 
 @IonicPage()
@@ -23,12 +20,18 @@ export class AboutPage {
     public navParams: NavParams,
     private appVersion: AppVersion,
     private appAvailability: AppAvailability,
-    private platform: Platform,
-    private iab: InAppBrowser
+    private iab: InAppBrowser,
+    private platform: Platform
   ) 
   {
     this.appVersion.getVersionNumber().
       then(v => this.versionNr = v);
+  }
+
+  ionViewDidLoad() {
+    this.platform.registerBackButtonAction( () => {
+      this.navCtrl.pop();
+    });
   }
 
   openExternalBrowser(link) {
@@ -50,4 +53,6 @@ export class AboutPage {
       }
     );
   }
+
+
 }

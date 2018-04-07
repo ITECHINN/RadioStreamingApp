@@ -9,8 +9,8 @@ import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 
 import { BackgroundMode } from '@ionic-native/background-mode';
-import { TranslateService } from '@ngx-translate/core'
 
+import { TranslateService } from '@ngx-translate/core'
 
 @IonicPage()
 @Component({
@@ -31,7 +31,8 @@ export class ListMasterPage {
     public settings: Settings,
     private savedData: Storage,
     public loadingCtrl: LoadingController,
-    platform: Platform
+    private platform: Platform,
+    private backgroundMode: BackgroundMode
   ) {
 
     this.translateService.get('LIST_LOADING').subscribe(
@@ -45,6 +46,40 @@ export class ListMasterPage {
    * The view loaded, let's query our items for the list
    */
   ionViewDidLoad() {
+
+    this.platform.registerBackButtonAction(() => {
+
+      let activeView = this.navCtrl.getActive();
+      alert("ACTIVE VIEW = " + activeView.name);
+
+
+      if (activeView.name == 'ListMasterPage') {
+        alert("You pressed the Back button in the PORTAL page");
+      }
+    
+      if (activeView.name == 'ItemDetailPage') {
+        alert("You pressed the Back button in the RADIO STATION page");
+      }
+
+      if (activeView != null && ((<any> activeView).instance instanceof ListMasterPage)) {
+          //this.myCustomBackAction();
+          alert("HERE IT SHOULD MOVE THE APP TO THE BACKGROUND AND LEAVE IT OPEN");
+          this.backgroundMode.enable();
+          this.backgroundMode.moveToBackground();
+
+      } else {
+          alert("THIS LOOKS GOOD. WILL NAVIGATE BACK.");
+          this.navCtrl.pop();
+          
+      }
+    })
+
+      /*   ionViewWillEnter() {
+    var unregister = this.platform.registerBackButtonAction( () => {
+      unregister();
+    })
+  } */
+    
 
     this.presentLoadingIndicator();
 
@@ -64,7 +99,7 @@ export class ListMasterPage {
             item.isFavorite = false;
           }
         })
-    }) 
+    })
 
     // Sorting: convert station names to lower case first, since sorting keeps it in account.
     this.currentItems.sort( (i, j) => {
@@ -75,6 +110,28 @@ export class ListMasterPage {
 
     this.dismissLoadingIndicator();
   }
+
+
+  ionViewWillEnter() {
+
+/*     var unregister = this.platform.registerBackButtonAction( () => {
+      unregister();
+    }) */
+  }
+
+/*   ionViewWillLeave() {
+
+    let activeView = this.navCtrl.getActive();
+
+    alert(activeView.name);
+    // Override the HW Back button behavior, so the app does not exit in this view, but returns to the Tab page.
+    this.platform.registerBackButtonAction( () => {
+      this.navCtrl.pop();
+    });
+    alert("LEAVING NOW FROM THE MASTER LIST");
+   }
+ */
+
 
   /**
    * Set item as favorite and store it

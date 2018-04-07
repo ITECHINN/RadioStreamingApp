@@ -23,29 +23,15 @@ export class TabsPage {
   tab2Title = "Search ";
   tab3Title = "Settings";
 
-  private resetBackButton: any;
-
   constructor(
     public navCtrl: NavController, 
     public translateService: TranslateService,
-    private backgroundMode: BackgroundMode,
-    private platform: Platform
+    private backgroundMode: BackgroundMode
   ) {
-    platform.ready().then(() => {
-      /* 
-        Disable the Back button behavior in the Tabs pages,
-        the app will go to background when pressing Back in the main view.
-      */
-      this.backgroundMode.enable();
-      this.backgroundMode.overrideBackButton();
-    })
-
     translateService.get(['TAB1_TITLE', 'TAB2_TITLE', 'TAB3_TITLE']).subscribe(values => {
       this.tab1Title = values['TAB1_TITLE'];
       this.tab2Title = values['TAB2_TITLE'];
       this.tab3Title = values['TAB3_TITLE'];
     });
-
   }
-
 }

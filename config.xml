@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.striimiradio.radio" version="0.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.striimiradio.radio" version="0.4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>StriimiRadio</name>
     <description>Streaming radio: Finnish radio stations.</description>
     <author email="striimiradio@gmail.com" href="">Frederik Vermaete</author>
@@ -17,6 +17,7 @@
     <allow-navigation href="*" />
     <allow-navigation href="data:*" />
     <preference name="ScrollEnabled" value="false" />
+    <preference name="KeepRunning" value="true" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
@@ -103,4 +104,6 @@
     <engine name="browser" spec="~5.0.3" />
     <engine name="android" spec="6.4.0" />
     <plugin name="cordova-open-native-settings" spec="^1.5.0" />
+    <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
+    <plugin name="cordova-plugin-backbutton" spec="^0.3.0" />
 </widget>

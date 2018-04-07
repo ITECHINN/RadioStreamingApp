@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Platform, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
@@ -13,7 +13,19 @@ export class SearchPage {
 
   currentItems: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public items: Items,
+    private platform: Platform
+  ) { }
+
+ionViewDidLoad() {
+    // Override the HW Back button behavior, so the app does not exit in this Searched Item Biew, but returns to the Tab page!
+    this.platform.registerBackButtonAction( () => {
+      this.navCtrl.pop();
+    });
+  }
 
   /**
    * Perform a service for the proper items.

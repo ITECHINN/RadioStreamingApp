@@ -7,35 +7,16 @@ import { FirstRunPage } from '../pages/pages';
 import { Settings } from '../providers/providers';
 import { BackgroundMode } from '@ionic-native/background-mode';
 
-
 @Component({
-  template: `<ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>{{ "MENU_MENU" | translate }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content>
-      <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          <span id="set-left">{{ p.translation | translate }}</span>
-          <span id="set-right"><ion-icon style="float: right" name="{{p.icon}}"></ion-icon></span>
-        </button>
-      </ion-list>
-    </ion-content>
-
-  </ion-menu>
-  <ion-nav #content [root]="rootPage"></ion-nav>`
+  templateUrl: 'menu-template.html'
 })
-export class MyApp {
+export class StriimiRadioApp {
   rootPage = FirstRunPage;
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
     { title: 'Portal', component: 'TabsPage', translation: 'MENU_HOME', icon: 'musical-notes' },
-    { title: 'Radio Stations', component: 'ListMasterPage', translation: 'MENU_STATIONS', icon: 'radio' },
     { title: 'Search', component: 'SearchPage', translation: 'MENU_SEARCH', icon: 'search' },
     { title: 'Options', component: 'SettingsPage', translation: 'MENU_OPTIONS', icon: 'options' },
     { title: 'Help & Support', component: 'HelpSupportPage', translation: 'MENU_HELP_SUPPORT', icon: 'help-circle' } ,
@@ -49,13 +30,20 @@ export class MyApp {
     private config: Config, 
     private statusBar: StatusBar, 
     private splashScreen: SplashScreen,
-    private backgroundMode: BackgroundMode) {
+    private backgroundMode: BackgroundMode
+    ) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      // Disable the notification message with the 'hidden' 
+      this.backgroundMode.setDefaults({
+        title: 'StriimiRadio Music Streaming',
+        text: 'Background music streaming',
+        silent: true
+      });
       this.backgroundMode.enable();
     });
     this.initTranslate();
@@ -87,9 +75,14 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
+/*   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  } */
+
+  // Pushing the page onto the stack allows us to dismiss it with the Back button.
+  pushPageToStack(page) {
+    this.nav.push(page.component);
   }
 }

@@ -101,9 +101,9 @@
     <allow-navigation href="http://192.168.8.104:8100" />
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
     <plugin name="cordova-plugin-appavailability" spec="^0.4.2" />
-    <engine name="browser" spec="~5.0.3" />
-    <engine name="android" spec="6.4.0" />
     <plugin name="cordova-open-native-settings" spec="^1.5.0" />
     <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
     <plugin name="cordova-plugin-backbutton" spec="^0.3.0" />
+    <engine name="browser" spec="~5.0.3" />
+    <engine name="android" spec="6.4.0" />
 </widget>

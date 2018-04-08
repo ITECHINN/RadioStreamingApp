@@ -49,37 +49,21 @@ export class ListMasterPage {
 
     this.platform.registerBackButtonAction(() => {
 
+      // Check the active view
       let activeView = this.navCtrl.getActive();
-      alert("ACTIVE VIEW = " + activeView.name);
 
-
-      if (activeView.name == 'ListMasterPage') {
-        alert("You pressed the Back button in the PORTAL page");
-      }
-    
-      if (activeView.name == 'ItemDetailPage') {
-        alert("You pressed the Back button in the RADIO STATION page");
-      }
-
+      // If we press Back in the main view, push the app to the background.
       if (activeView != null && ((<any> activeView).instance instanceof ListMasterPage)) {
-          //this.myCustomBackAction();
-          alert("HERE IT SHOULD MOVE THE APP TO THE BACKGROUND AND LEAVE IT OPEN");
+          // Move the app to the background
           this.backgroundMode.enable();
           this.backgroundMode.moveToBackground();
-
-      } else {
-          alert("THIS LOOKS GOOD. WILL NAVIGATE BACK.");
+      } 
+      else 
+      {
+          // Pop the last page from the stack (this is the item detail view)
           this.navCtrl.pop();
-          
       }
     })
-
-      /*   ionViewWillEnter() {
-    var unregister = this.platform.registerBackButtonAction( () => {
-      unregister();
-    })
-  } */
-    
 
     this.presentLoadingIndicator();
 
@@ -111,28 +95,7 @@ export class ListMasterPage {
     this.dismissLoadingIndicator();
   }
 
-
-  ionViewWillEnter() {
-
-/*     var unregister = this.platform.registerBackButtonAction( () => {
-      unregister();
-    }) */
-  }
-
-/*   ionViewWillLeave() {
-
-    let activeView = this.navCtrl.getActive();
-
-    alert(activeView.name);
-    // Override the HW Back button behavior, so the app does not exit in this view, but returns to the Tab page.
-    this.platform.registerBackButtonAction( () => {
-      this.navCtrl.pop();
-    });
-    alert("LEAVING NOW FROM THE MASTER LIST");
-   }
- */
-
-
+  
   /**
    * Set item as favorite and store it
    */
@@ -151,8 +114,6 @@ export class ListMasterPage {
       this.savedData.set('savedAsFavorite', item.station);
       item.isFavorite = true;
     })
-
-    
   }
 
   /**

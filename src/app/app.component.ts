@@ -17,8 +17,6 @@ export class StriimiRadioApp {
 
   pages: any[] = [
     { title: 'Portal', component: 'TabsPage', translation: 'MENU_HOME', icon: 'musical-notes' },
-    { title: 'Search', component: 'SearchPage', translation: 'MENU_SEARCH', icon: 'search' },
-    { title: 'Options', component: 'SettingsPage', translation: 'MENU_OPTIONS', icon: 'options' },
     { title: 'Help & Support', component: 'HelpSupportPage', translation: 'MENU_HELP_SUPPORT', icon: 'help-circle' } ,
     { title: 'About', component: 'AboutPage', translation: 'MENU_ABOUT', icon: 'information-circle' } 
   ]

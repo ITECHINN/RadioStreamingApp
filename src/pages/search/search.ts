@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform, IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Tab1Root } from '../pages';
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 
@@ -20,16 +20,10 @@ export class SearchPage {
     private platform: Platform
   ) { }
 
-ionViewDidLoad() {
-    // Override the HW Back button behavior, so the app does not exit in this Searched Item Biew, but returns to the Tab page!
-    this.platform.registerBackButtonAction( () => {
-      this.navCtrl.pop();
-    });
-  }
-
   /**
    * Perform a service for the proper items.
    */
+
   getItems(ev) {
     let val = ev.target.value;
     if (!val || !val.trim()) {
@@ -44,6 +38,7 @@ ionViewDidLoad() {
   /**
    * Navigate to the detail page for this item.
    */
+  
   openItem(item: Item) {
     this.navCtrl.push('ItemDetailPage', {
       item: item

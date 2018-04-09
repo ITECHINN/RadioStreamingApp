@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { Platform, LoadingController, IonicPage, NavController } from 'ionic-angular';
+import { Platform, LoadingController, IonicPage, NavController, Nav } from 'ionic-angular';
 
 import { Settings } from '../../providers/providers';
 import { Storage } from '@ionic/storage';
@@ -26,6 +25,7 @@ export class ListMasterPage {
 
   constructor(
     public navCtrl: NavController,
+    private nav: Nav,
     private translateService: TranslateService,
     public items: Items,
     public settings: Settings,
@@ -33,19 +33,24 @@ export class ListMasterPage {
     public loadingCtrl: LoadingController,
     private platform: Platform,
     private backgroundMode: BackgroundMode
-  ) {
+  ) 
+  {
+    this.platform.ready().then(() => {
 
     this.translateService.get('LIST_LOADING').subscribe(
       translatedString => {
         this.loadingContent = "<p>" + translatedString + "</p>"
-      }
-    ) 
+      })
+    })
   }
 
-  /**
-   * The view loaded, let's query our items for the list
+  // 
+  /*
+   * The view loaded
    */
   ionViewDidLoad() {
+
+    this.presentLoadingIndicator();
 
     this.platform.registerBackButtonAction(() => {
 
@@ -64,8 +69,6 @@ export class ListMasterPage {
           this.navCtrl.pop();
       }
     })
-
-    this.presentLoadingIndicator();
 
     // Get the list of radio station items
     this.currentItems = this.items.query();
@@ -92,14 +95,18 @@ export class ListMasterPage {
       return 0;
     })
 
+  }
+
+  ionViewDidEnter() {
     this.dismissLoadingIndicator();
   }
 
-  
+
   /**
    * Set item as favorite and store it
    */
   setFavorite(item) {
+
     // If favoriteMarkedItem exists (and is not e.g. 'undefined')
     if (this.favoriteMarkedItem) {
       // Reset the icon of the previously marked favorite
@@ -135,7 +142,6 @@ export class ListMasterPage {
     });
   }
 
-
   presentLoadingIndicator() {
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
@@ -145,7 +151,11 @@ export class ListMasterPage {
   }
 
   dismissLoadingIndicator() {
-      this.loading.dismiss();
+    this.loading.dismiss();
   } 
+
+  openHelp() {
+      this.navCtrl.push('HelpSupportPage');
+  }
 
 }

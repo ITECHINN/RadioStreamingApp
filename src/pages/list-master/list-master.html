@@ -1,47 +1,60 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar class="favorite-station-area">
         <ion-grid>
             <ion-row>
                 <ion-title start>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
 
                 <ion-buttons end>
                     <button ion-button icon-only [menuToggle]="activeMenu">
-                        <ion-icon name="menu"></ion-icon>
-                    </button>
+                    <ion-icon name="menu"></ion-icon>
+                </button>
                 </ion-buttons>
             </ion-row>
 
-            <ion-row *ngIf="this.favoriteMarkedItem">
-                <button start id="button-favorite-station" ion-item (click)="openItem(this.favoriteMarkedItem)">
-                    <ion-avatar item-start>
-                        <img [src]="this.favoriteMarkedItem.logoPic" />
-                    </ion-avatar>
-                    <img src="assets/img/Favorite_Station.png" style="float:right; width: 42px; height: 42px;">
-                    <h2 id="favorite-h2">{{this.favoriteMarkedItem.station}}</h2>
-                    <p id="favorite-p">{{ "FAVORITE_STATION" | translate }}</p>
-                </button>
-            </ion-row>
+            <div id="parent">
+                <ion-row *ngIf="!favoriteMarkedItem">
+                    <button start id="button-favorite-station" ion-item (click)="openHelp()">
+                        <ion-avatar item-start>
+                            <img src="assets/img/help-icon.png"/>                             
+                        </ion-avatar>
+                        <img src="assets/img/not-favorite.png" style="float:right; width: 42px; height: 42px;">
+                        <h2>{{ "FAVORITE_STATION" | translate }}</h2>
+                        <p id="favorite-p ">{{ "FAVORITE_STATION" | translate }}</p>
+                    </button>
+                </ion-row>
+
+                <ion-row *ngIf="favoriteMarkedItem">
+                    <button start id="button-favorite-station" ion-item (click)="openItem(favoriteMarkedItem)">
+                        <ion-avatar item-start>
+                            <img [src]="favoriteMarkedItem.logoPic"/>                             
+                        </ion-avatar>
+                        <img src="assets/img/Favorite_Station.png" style="float:right; width: 42px; height: 42px;">
+                        <h2 id="favorite-h2 ">{{favoriteMarkedItem.station}}</h2>
+                        <p id="favorite-p ">{{ "FAVORITE_STATION" | translate }}</p>
+                    </button>
+                </ion-row>
+            </div>
 
         </ion-grid>
     </ion-navbar>
-
 </ion-header>
 
+
 <ion-content>
-    <ion-list class="list-top">
+    <ion-list>
         <ion-item-sliding *ngFor="let item of currentItems">
             <button ion-item (click)="openItem(item)">
-                    <ion-avatar item-start>
-                        <img [src]="item.logoPic" />
-                    </ion-avatar>
-                    <h2>{{item.station}}</h2>
-                    <p>{{item.about}}</p>
-                </button>
+                <ion-avatar item-start>
+                    <img [src]="item.logoPic"/>
+                </ion-avatar>
+                <h2>{{item.station}}</h2>
+                <p>{{item.about}}</p>
+            </button>
 
             <ion-item-options item-end>
                 <button (click)="setFavorite(item)">
-                        <ion-icon class="favorite-icon" padding [name]="item.isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
-                    </button>
+                    <ion-icon class="favorite-icon " padding [name]="item.isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+                </button>
             </ion-item-options>
 
         </ion-item-sliding>

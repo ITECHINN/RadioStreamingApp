@@ -1,18 +1,21 @@
 page-list-master {
+    #parent {
+        margin-top: 5px;
+        width: 100%;
+        height: 70px;
+        position: relative;
+    }
     .favorite-icon {
         color: #705d56;
-    }
-    .list-top {
-        margin-top: auto;
-        position: relative;
     }
     #button-favorite-station {
         background-color: #f0f7f4;
         border: none;
-        border-radius: 5px;
+        border-radius: 3px;
+        height: 65px;
     }
     #button-favorite-station:hover {
-        background-color: #f0f7f4;
+        background-color: #ffffff;
     }
     #favorite-h2 {
         color: #32292f;

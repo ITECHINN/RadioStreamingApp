@@ -119,7 +119,10 @@ export class RadioStreamService {
       dismissable : true,
       hasPrev     : false,
       hasNext     : false,
-      hasClose    : false
+      hasClose    : false,
+      playIcon    : 'media_play',
+      pauseIcon   : 'media_pause',
+      notificationIcon: 'media_radio'
     })
   }
 

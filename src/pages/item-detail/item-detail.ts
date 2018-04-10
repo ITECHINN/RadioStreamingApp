@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events, Platform} from 'ionic-angular';
 
 import { Media, MediaObject } from '@ionic-native/media';
 import { RadioStreamService } from '../../providers/radiostream/radiostream';
@@ -7,7 +7,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { TranslateService } from '@ngx-translate/core';
 
 import { Items } from '../../providers/providers';
-import { Platform } from 'ionic-angular';
+
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 import { MusicControls } from '@ionic-native/music-controls';
 
@@ -36,6 +37,7 @@ export class ItemDetailPage {
     private platform: Platform,
     private iab: InAppBrowser,
     private musicControls: MusicControls,
+    private backgroundMode: BackgroundMode,
     public events: Events,
     private zone: NgZone
   )
@@ -85,10 +87,10 @@ export class ItemDetailPage {
               this.buttonIconName = "play";
               this.rsService.stopMedia();
               this.musicControls.destroy();
+              break;
             default:
-              //this.buttonIconName = "pause";
-              this.rsService.stopMedia();
-              this.musicControls.destroy();
+              //this.rsService.stopMedia();
+              //this.musicControls.destroy();
               break;
           }
           this.events.publish('updateScreen');
@@ -96,6 +98,8 @@ export class ItemDetailPage {
 
         // Listen to interaction with the Music Controls
         this.musicControls.listen();
+
+        this.backgroundMode.enable();
       })
   }
 
@@ -207,26 +211,9 @@ export class ItemDetailPage {
   }
 
   openExternalBrowser(link) {
-    this.iab.create(link, '_system');
+
+    //this.backgroundMode.moveToBackground();
+    var urlOpen = this.iab.create(link, '_system');
+
   }
-
-  //onChange() {}
-
-  
-/*   ionViewWillEnter() {
-    // Override the HW Back button behavior, so the app does not exit in this view, but returns to the Tab page.
-    this.platform.registerBackButtonAction( () => {
-      this.navCtrl.pop();
-    });
-    alert("PRESSING THE BACK BUTTON WILL NOW RETURN TO THE TABS PAGE");
-  } */
-    
-/*   ionViewWillLeave() {
-    // Override the HW Back button behavior, so the app does not exit in this view, but returns to the Tab page.
-    this.platform.registerBackButtonAction( () => {
-      this.navCtrl.pop();
-    });
-    alert("LEAVING NOW FROM THE ITEM DETAILS LIST");
-  } */
-
 }

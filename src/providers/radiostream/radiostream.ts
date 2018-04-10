@@ -6,6 +6,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Settings } from '../../providers/providers';
 
 
+import { BackgroundMode } from '@ionic-native/background-mode';
+
+
 // This service will allow other pages to easily access the actived radio's audio stream.
 @Injectable()
 export class RadioStreamService {
@@ -36,8 +39,15 @@ export class RadioStreamService {
     public loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     platform: Platform,
-    public settings: Settings
+    public settings: Settings,
+
+    private backgroundMode: BackgroundMode
+
+
   ) {
+
+
+      this.backgroundMode.enable();
 
       // Prepare the translations for connection alert
       this.translateService.get('ALERT_CONNECTION_TITLE').subscribe(

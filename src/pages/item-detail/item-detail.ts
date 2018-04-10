@@ -213,7 +213,6 @@ export class ItemDetailPage {
   openExternalBrowser(link) {
 
     //this.backgroundMode.moveToBackground();
-    var urlOpen = this.iab.create(link, '_system');
-
+    this.iab.create(link, '_system', 'mediaPlaybackRequiresUserAction=no,shouldPauseOnSuspend=no');
   }
 }
